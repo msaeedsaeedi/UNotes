@@ -413,3 +413,143 @@ $$
 - Don’t forget to square **only** after integrating or summing.
 - Expectation is **linear**, but variance is **not**.
 - Always validate the **domain** and **PDF/PMF sum or integral** first.
+
+## ✅ **1.5: Properties of Expectation and Variance**
+
+We'll cover:
+- Linearity of Expectation
+- Variance of a Linear Combination
+- Scaling and Shifting Rules
+- Expectations and Variances of Sums
+- Independent variable properties
+
+---
+
+## 🔷 1.5.1 Properties of Expectation
+
+Expectation is **linear**, whether the variables are independent or not.
+
+### 📌 Property 1: **Linearity**
+$$
+E[aX + b] = aE[X] + b
+$$
+- $ a, b \in \mathbb{R} $ (constants)
+- Holds for **both discrete and continuous** random variables
+
+### 🧠 Example:
+Let $ E[X] = 5 $
+
+Then,
+$$
+E[3X + 2] = 3 \cdot 5 + 2 = 17
+$$
+
+---
+
+### 📌 Property 2: Expectation of a Sum
+$$
+E[X + Y] = E[X] + E[Y]
+$$
+- True **regardless of independence**
+
+$$
+E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i]
+$$
+
+---
+
+### 📌 Property 3: Expectation of a Constant
+$$
+E[c] = c
+$$
+If $ X $ is always equal to $ c $, then its expected value is $ c $.
+
+---
+
+### 📌 Property 4: Expectation of a Product (If Independent)
+$$
+E[XY] = E[X] \cdot E[Y] \quad \text{if } X, Y \text{ are independent}
+$$
+
+This does **not** hold if $ X, Y $ are dependent.
+
+---
+
+## 🔶 1.5.2 Properties of Variance
+
+Variance is **not** linear like expectation. Be careful!
+
+---
+
+### 📌 Property 1: Variance of a Constant
+$$
+\text{Var}(c) = 0
+$$
+
+---
+
+### 📌 Property 2: Scaling Rule
+$$
+\text{Var}(aX) = a^2 \cdot \text{Var}(X)
+$$
+
+- Scaling affects variance **quadratically**
+
+---
+
+### 📌 Property 3: Shifting Rule
+$$
+\text{Var}(X + c) = \text{Var}(X)
+$$
+
+- Adding a constant shifts the data but doesn't change the spread
+
+---
+
+### 📌 Property 4: Variance of a Linear Combination
+Let $ Y = aX + b $
+
+$$
+\text{Var}(aX + b) = a^2 \cdot \text{Var}(X)
+$$
+
+---
+
+### 📌 Property 5: Variance of Sum (Independent)
+$$
+\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) \quad \text{if } X, Y \text{ are independent}
+$$
+
+$$
+\text{Var}\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \text{Var}(X_i) \quad \text{(for independent variables)}
+$$
+
+---
+
+### 📌 Property 6: If Not Independent
+$$
+\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2 \cdot \text{Cov}(X, Y)
+$$
+
+We’ll explore **Covariance** in more detail in joint distributions.
+
+---
+
+## 🎯 Summary Table
+
+| Operation                      | Expectation                      | Variance                          |
+|-------------------------------|----------------------------------|-----------------------------------|
+| $ E[aX + b] $               | $ aE[X] + b $                  | $ a^2 \text{Var}(X) $           |
+| $ E[X + Y] $                | $ E[X] + E[Y] $                | $ \text{Var}(X) + \text{Var}(Y) $ *(if ind.)* |
+| $ E[c] $                    | $ c $                          | $ 0 $                           |
+| $ \text{Var}(X + c) $       | -                                | $ \text{Var}(X) $               |
+| $ \text{Var}(X + Y) $       | -                                | $ \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y) $ |
+
+---
+
+## 🧠 Typical Exam Question:
+> Let $ E[X] = 3, \text{Var}(X) = 4 $. Let $ Y = 5X + 2 $. Find $ E[Y] $, $ \text{Var}(Y) $.
+
+**Solution**:
+- $ E[Y] = 5E[X] + 2 = 5(3) + 2 = 17 $
+- $ \text{Var}(Y) = 25 \cdot \text{Var}(X) = 25 \cdot 4 = 100 $
