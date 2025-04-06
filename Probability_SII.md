@@ -285,3 +285,131 @@ If you'd like, I can give you problems like:
 
 > Given a stepwise CDF, determine the PMF.  
 > Given a continuous CDF (e.g., $ F(x) = 1 - e^{-\lambda x} $), find the PDF and then calculate $ P(a < X < b) $.
+
+Awesome! Let's now tackle a super important topic:
+
+---
+
+## ✅ **1.4: Expectation and Variance**
+
+These are the **first and second moments** of a random variable — they measure **central tendency** and **spread**, respectively.
+
+Your teacher may ask:
+- Definitions for both discrete and continuous cases
+- Full derivations
+- Properties
+- Applications in real-world scenarios
+- Questions that combine expectation and variance with CDF/PMF/PDF
+
+Let’s break it down step by step 👇
+
+---
+
+## 🔹 1.4.1 Expectation (Mean)
+
+### 🔸 Definition:
+The **expectation (mean)** of a random variable $ X $ is a **weighted average of all possible values** of $ X $.
+
+---
+
+### 🟪 For Discrete Random Variables:
+$$
+E[X] = \sum_x x \cdot p(x)
+$$
+
+Where:
+- $ x $ = possible values of RV
+- $ p(x) $ = PMF
+
+---
+
+### 🟨 For Continuous Random Variables:
+$$
+E[X] = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
+$$
+
+Where:
+- $ f(x) $ = PDF
+
+---
+
+### 🧠 Example 1 (Discrete):
+Let $ X $ be the outcome of rolling a fair die.
+
+$$
+E[X] = \sum_{x=1}^{6} x \cdot \frac{1}{6} = \frac{1+2+3+4+5+6}{6} = 3.5
+$$
+
+---
+
+### 🧠 Example 2 (Continuous):
+Let $ f(x) = 2x $, $ 0 \le x \le 1 $.  
+(Valid PDF: check that $ \int_0^1 2x dx = 1 $)
+
+Now:
+$$
+E[X] = \int_0^1 x \cdot 2x \, dx = \int_0^1 2x^2 dx = \left[\frac{2x^3}{3}\right]_0^1 = \frac{2}{3}
+$$
+
+---
+
+## 🔹 1.4.2 Variance
+
+### 🔸 Definition:
+Variance measures the **spread** of the random variable around the mean.
+
+---
+
+### Formula:
+$$
+\text{Var}(X) = E[(X - \mu)^2] = E[X^2] - (E[X])^2
+$$
+
+Where:
+- $ \mu = E[X] $
+
+---
+
+### 🟪 For Discrete:
+$$
+\text{Var}(X) = \sum_x (x - \mu)^2 \cdot p(x) = \sum_x x^2 p(x) - (E[X])^2
+$$
+
+---
+
+### 🟨 For Continuous:
+$$
+\text{Var}(X) = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = \int x^2 f(x) dx - (E[X])^2
+$$
+
+---
+
+### 🧠 Example (Rolling a fair die):
+
+We already have $ E[X] = 3.5 $
+
+$$
+E[X^2] = \sum_{x=1}^{6} x^2 \cdot \frac{1}{6} = \frac{1^2 + 2^2 + \dots + 6^2}{6} = \frac{91}{6}
+$$
+
+$$
+\text{Var}(X) = E[X^2] - (E[X])^2 = \frac{91}{6} - (3.5)^2 = \frac{91}{6} - \frac{49}{4} = \frac{364 - 294}{24} = \frac{70}{24} = 2.9167
+$$
+
+---
+
+## 🔁 Recap with a Table
+
+| Concept   | Discrete Formula                | Continuous Formula                    |
+|-----------|----------------------------------|----------------------------------------|
+| $ E[X] $ | $ \sum x \cdot p(x) $          | $ \int x \cdot f(x) \, dx $          |
+| $ E[X^2] $ | $ \sum x^2 \cdot p(x) $        | $ \int x^2 \cdot f(x) \, dx $        |
+| $ \text{Var}(X) $ | $ E[X^2] - (E[X])^2 $        | $ E[X^2] - (E[X])^2 $                |
+| $ \sigma $ (SD) | $ \sqrt{\text{Var}(X)} $ | $ \sqrt{\text{Var}(X)} $             |
+
+---
+
+## 🎯 Common Pitfalls:
+- Don’t forget to square **only** after integrating or summing.
+- Expectation is **linear**, but variance is **not**.
+- Always validate the **domain** and **PDF/PMF sum or integral** first.
