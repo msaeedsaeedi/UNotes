@@ -891,3 +891,186 @@ $$
 - **Moments and cumulants** match for the first two (mean and variance).
 - Cumulants are **additive for independent RVs**, so they’re useful in sum-based problems.
 - You **don’t need to memorize higher derivatives**—focus on how to use CGF for mean/variance.
+
+## ✅ **1.9: Measures of Central Tendency for Random Variables**
+
+We’ve already talked about **expectation (mean)** as a measure of central tendency. Now, we’ll cover:
+
+- Median  
+- Mode  
+- Quartiles  
+
+These are often overlooked for random variables, but **your teacher might ask** them in a tricky way—so we’ll go **step-by-step**.
+
+---
+
+## 🔹 1.9.1 Mean (Quick Recap)
+
+| Type | Formula |
+|------|---------|
+| Discrete | $ \mu = E[X] = \sum x \cdot P(X=x) $ |
+| Continuous | $ \mu = E[X] = \int x \cdot f(x) \, dx $ |
+
+Mean is the **expected center**, but it’s sensitive to **extreme values**.
+
+---
+
+## 🔹 1.9.2 Median of a Random Variable
+
+**Definition:** The median is the value $ m $ such that:
+
+$$
+P(X \leq m) \geq 0.5 \quad \text{and} \quad P(X \geq m) \geq 0.5
+$$
+
+> Median is the **middle** of the distribution and **less sensitive** to outliers than the mean.
+
+---
+
+### 🔸 Example (Discrete)
+
+Let $ X $ have this PMF:
+
+| $ X $ | 1 | 2 | 3 | 4 | 5 |
+|--------|---|---|---|---|---|
+| $ P(X=x) $ | 0.1 | 0.2 | 0.4 | 0.2 | 0.1 |
+
+Compute CDF:
+
+| $ x $ | CDF $ P(X \leq x) $ |
+|--------|-----------------------|
+| 1 | 0.1 |
+| 2 | 0.3 |
+| 3 | 0.7 |
+| 4 | 0.9 |
+| 5 | 1.0 |
+
+➡️ Median is the **first value where CDF ≥ 0.5**, so median = **3**
+
+---
+
+### 🔸 Example (Continuous)
+
+Let $ X \sim \text{Uniform}(0, 2) $
+
+Then PDF:
+$$
+f(x) = \frac{1}{2}, \quad 0 \leq x \leq 2
+$$
+
+To find median:
+
+$$
+P(X \leq m) = \int_0^m \frac{1}{2} dx = \frac{m}{2} = 0.5
+\Rightarrow m = 1
+$$
+
+➡️ Median = **1**
+
+---
+
+## 🔹 1.9.3 Mode of a Random Variable
+
+**Definition:** The mode is the value $ x $ at which the **PMF or PDF** is maximized.
+
+---
+
+### 🔸 Discrete Example
+
+Same PMF:
+
+| $ X $ | 1 | 2 | 3 | 4 | 5 |
+|--------|---|---|---|---|---|
+| $ P(X=x) $ | 0.1 | 0.2 | 0.4 | 0.2 | 0.1 |
+
+Here, max probability is at $ x = 3 $
+
+➡️ Mode = **3**
+
+---
+
+### 🔸 Continuous Example
+
+Let $ X \sim \text{Exponential}(\lambda) $, PDF:
+
+$$
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+$$
+
+This function is **maximum at $ x = 0 $**
+
+➡️ Mode = **0**
+
+---
+
+## 🔹 1.9.4 Quartiles of a Random Variable
+
+Quartiles split the distribution into four parts.
+
+- $ Q_1 $: First quartile (25% of values ≤ this)
+- $ Q_2 $: Median (50%)
+- $ Q_3 $: Third quartile (75%)
+
+---
+
+### 🔸 Discrete Example
+
+From earlier:
+
+| $ x $ | 1 | 2 | 3 | 4 | 5 |
+|--------|---|---|---|---|---|
+| $ P(X=x) $ | 0.1 | 0.2 | 0.4 | 0.2 | 0.1 |
+| CDF | 0.1 | 0.3 | 0.7 | 0.9 | 1.0 |
+
+- $ Q_1 $: First value with CDF ≥ 0.25 → **2**
+- $ Q_2 $: Median → **3**
+- $ Q_3 $: First value with CDF ≥ 0.75 → **4**
+
+---
+
+### 🔸 Continuous Example: Uniform(0, 2)
+
+PDF: $ f(x) = \frac{1}{2} $
+
+To find $ Q_1 $:
+
+$$
+P(X \leq Q_1) = 0.25 = \int_0^{Q_1} \frac{1}{2} dx = \frac{Q_1}{2}
+\Rightarrow Q_1 = 0.5
+$$
+
+Similarly:
+
+- $ Q_2 = 1 $ (median)
+- $ Q_3 = 1.5 $
+
+---
+
+## 🎯 Summary Table
+
+| Measure | Meaning | How to Find |
+|--------|---------|-------------|
+| **Mean** | Average | $ E[X] $ |
+| **Median** | Middle | Solve $ P(X \leq m) = 0.5 $ |
+| **Mode** | Most probable | Max of PMF/PDF |
+| **Quartiles** | 25%, 50%, 75% points | Solve $ P(X \leq Q_i) = i/4 $ |
+
+---
+
+## 🧠 Tips for Exams:
+- Use **CDFs** to find medians and quartiles (discrete or continuous).
+- If the PMF is **symmetrical**, mean = median = mode.
+- Quartiles are especially useful when asked for **IQR (Interquartile Range) = Q3 - Q1**.
+
+---
+
+That completes **Part 1** of your syllabus in full detail! 🎉  
+We covered:
+
+- Discrete & Continuous RVs  
+- PMF/PDF, CDF  
+- Expectation, Variance  
+- Properties  
+- Moments  
+- MGF & CGF  
+- Median, Mode, Quartiles  
