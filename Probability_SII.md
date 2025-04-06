@@ -553,3 +553,108 @@ We’ll explore **Covariance** in more detail in joint distributions.
 **Solution**:
 - $ E[Y] = 5E[X] + 2 = 5(3) + 2 = 17 $
 - $ \text{Var}(Y) = 25 \cdot \text{Var}(X) = 25 \cdot 4 = 100 $
+
+## ✅ **1.6: Moments (About the Mean and Origin)**
+
+Moments describe the **shape** and **features** of a probability distribution:
+- **Central moments** focus on spread around the **mean**
+- **Raw moments** are about spread around the **origin (0)**
+
+---
+
+## 🔹 1.6.1 What is a Moment?
+
+The $ r $-th moment of a random variable $ X $ is defined as:
+
+### 🔸 About the Origin:
+$$
+\mu'_r = E[X^r]
+$$
+
+### 🔸 About the Mean (Central Moment):
+$$
+\mu_r = E[(X - \mu)^r]
+$$
+Where $ \mu = E[X] $
+
+---
+
+## 🔸 Interpretation of First Few Moments:
+
+| Moment | About Origin            | About Mean (Central)             | Interpretation                  |
+|--------|--------------------------|----------------------------------|---------------------------------|
+| 1st    | $ E[X] $              | $ 0 $                          | Mean (location of distribution) |
+| 2nd    | $ E[X^2] $            | $ \text{Var}(X) $              | Spread (variance)               |
+| 3rd    | $ E[X^3] $            | $ E[(X - \mu)^3] $             | Skewness (symmetry)             |
+| 4th    | $ E[X^4] $            | $ E[(X - \mu)^4] $             | Kurtosis (peakedness)           |
+
+---
+
+## 🔹 1.6.2 Raw Moments (About Origin)
+
+$$
+\mu'_1 = E[X], \quad \mu'_2 = E[X^2], \quad \mu'_3 = E[X^3], \quad \mu'_4 = E[X^4]
+$$
+
+These are easier to compute directly from PMF/PDF.
+
+---
+
+### 🧠 Example (Discrete):
+Let $ X $ have values $ 1, 2, 3 $ with probabilities $ \frac{1}{6}, \frac{1}{2}, \frac{1}{3} $
+
+**Step 1: First raw moment**
+$$
+\mu'_1 = E[X] = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{2} + 3 \cdot \frac{1}{3} = \frac{1}{6} + 1 + 1 = \frac{13}{6}
+$$
+
+**Step 2: Second raw moment**
+$$
+\mu'_2 = E[X^2] = 1^2 \cdot \frac{1}{6} + 2^2 \cdot \frac{1}{2} + 3^2 \cdot \frac{1}{3} = \frac{1}{6} + 2 + 3 = \frac{31}{6}
+$$
+
+---
+
+## 🔹 1.6.3 Central Moments (About Mean)
+
+$$
+\mu_2 = E[(X - \mu)^2] = \text{Var}(X)
+$$
+
+$$
+\mu_3 = E[(X - \mu)^3] \quad \text{(Skewness)}
+$$
+
+$$
+\mu_4 = E[(X - \mu)^4] \quad \text{(Kurtosis)}
+$$
+
+---
+
+### 🧠 Example (Using Earlier Data):
+
+Let’s reuse:
+- $ \mu = \mu'_1 = \frac{13}{6} $
+- $ \mu'_2 = \frac{31}{6} $
+
+Now compute:
+$$
+\mu_2 = \text{Var}(X) = E[X^2] - (E[X])^2 = \frac{31}{6} - \left(\frac{13}{6}\right)^2 = \frac{31}{6} - \frac{169}{36}
+$$
+
+To subtract:
+$$
+\frac{31}{6} = \frac{186}{36}, \quad \Rightarrow \mu_2 = \frac{186 - 169}{36} = \frac{17}{36}
+$$
+
+---
+
+## 🎯 Summary
+
+| Moment      | Formula                              | Use                         |
+|-------------|---------------------------------------|------------------------------|
+| Raw moment  | $ \mu'_r = E[X^r] $                | Simpler to compute           |
+| Central moment | $ \mu_r = E[(X - \mu)^r] $         | Describes distribution shape |
+| Variance    | $ \mu_2 $                          | Spread                       |
+| Skewness    | $ \mu_3 $                          | Asymmetry                    |
+| Kurtosis    | $ \mu_4 $                          | Peakedness                   |
