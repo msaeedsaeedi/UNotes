@@ -190,3 +190,98 @@ This is a valid PDF.
 1. ❌ No, $ P(X = 1.5) = 0 $ for continuous RVs  
 2. ❌ No, PMF $ \ge 0 $  
 3. ✅ $ f(x) \ge 0 $, and total area under curve = 1
+
+## 🔹 **1.3 Cumulative Distribution Function (CDF)**
+
+### 🔸 Definition:
+
+The **Cumulative Distribution Function (CDF)** of a random variable $ X $, denoted by $ F(x) $, gives the **probability that $ X $ takes a value less than or equal to $ x $:**
+
+$$
+F(x) = P(X \le x)
+$$
+
+> ✔️ This definition works for both **discrete** and **continuous** random variables.
+
+---
+
+## ✅ Properties of a CDF
+
+| Property | Description |
+|---------|-------------|
+| **1.** $ 0 \le F(x) \le 1 $ | CDF is always between 0 and 1 |
+| **2.** $ F(x) $ is **non-decreasing** | As $ x $ increases, $ F(x) $ does not decrease |
+| **3.** $ \lim_{x \to -\infty} F(x) = 0 $ | Left tail → probability = 0 |
+| **4.** $ \lim_{x \to \infty} F(x) = 1 $ | Right tail → total probability = 1 |
+| **5.** For **continuous RV**, CDF is **continuous** |
+| **6.** For **discrete RV**, CDF is **stepwise / jump function** |
+
+---
+
+## 🟪 For **Discrete Random Variables**
+
+$$
+F(x) = \sum_{t \le x} P(X = t)
+$$
+
+### 🧠 Example:
+
+Toss 2 fair coins. Let $ X $ = number of heads. We already know:
+
+| $ x $ | 0   | 1   | 2   |
+|--------|-----|-----|-----|
+| $ p(x) $ | 1/4 | 2/4 | 1/4 |
+
+Compute CDF $ F(x) $:
+
+| $ x $ | $ F(x) = P(X \le x) $ |
+|--------|--------------------------|
+| $ x < 0 $ | 0 |
+| 0 | $ 1/4 $ |
+| 1 | $ 1/4 + 2/4 = 3/4 $ |
+| 2 | $ 1 $ |
+| $ x > 2 $ | 1 |
+
+Plot: The graph will look like a **staircase**.
+
+---
+
+## 🟨 For **Continuous Random Variables**
+
+$$
+F(x) = \int_{-\infty}^{x} f(t) \, dt
+$$
+
+### 🧠 Example:
+
+Let $ f(x) = 1 $, for $ 0 \le x \le 1 $. (Uniform Distribution)
+
+$$
+F(x) = \begin{cases}
+0 & x < 0 \\
+\int_0^x 1 dt = x & 0 \le x \le 1 \\
+1 & x > 1
+\end{cases}
+$$
+
+✅ Check:
+- $ F(0.4) = 0.4 $
+- $ P(0.2 \le X \le 0.5) = F(0.5) - F(0.2) = 0.5 - 0.2 = 0.3 $
+
+---
+
+## 🔁 Recover PMF/PDF from CDF
+
+| Type       | Formula to recover          |
+|------------|-----------------------------|
+| **Discrete**  | $ P(X = x) = F(x) - F(x^-) $ *(jump height)* |
+| **Continuous**| $ f(x) = \frac{d}{dx} F(x) $ *(derivative)*  |
+
+---
+
+## 🎯 Practice Problems (Optional):
+
+If you'd like, I can give you problems like:
+
+> Given a stepwise CDF, determine the PMF.  
+> Given a continuous CDF (e.g., $ F(x) = 1 - e^{-\lambda x} $), find the PDF and then calculate $ P(a < X < b) $.
