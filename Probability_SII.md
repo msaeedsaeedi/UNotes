@@ -658,3 +658,131 @@ $$
 | Variance    | $ \mu_2 $                          | Spread                       |
 | Skewness    | $ \mu_3 $                          | Asymmetry                    |
 | Kurtosis    | $ \mu_4 $                          | Peakedness                   |
+
+## ✅ **1.7: Moment Generating Functions (MGF)**
+
+MGFs are not just theoretical—they’re used to:
+- Derive **all moments** of a distribution
+- Identify distributions (like a fingerprint)
+- Prove convergence in probability theory
+
+Let’s understand this step-by-step:
+
+---
+
+## 🔹 1.7.1 Definition
+
+For a random variable $ X $, the **Moment Generating Function (MGF)** is:
+
+$$
+M_X(t) = E[e^{tX}]
+$$
+
+> If the MGF exists in a neighborhood around $ t = 0 $, then:
+$$
+\text{The } r\text{-th moment of } X = M_X^{(r)}(0) = \left.\frac{d^r}{dt^r} M_X(t)\right|_{t=0}
+$$
+
+---
+
+## 🔸 1.7.2 Why is it Called “Moment Generating”?
+
+MGF **generates moments** by differentiating:
+- First derivative gives **first moment** (mean)
+- Second derivative gives **second raw moment**
+- And so on
+
+---
+
+### 🔸 Properties of MGF:
+
+| Property | Description |
+|----------|-------------|
+| $ M_X(0) = 1 $ | Always holds |
+| $ M_{aX + b}(t) = e^{bt} \cdot M_X(at) $ | Linear transformation |
+| If $ X $ and $ Y $ are independent → $ M_{X+Y}(t) = M_X(t) \cdot M_Y(t) $ | Used for sums |
+
+---
+
+## 🔹 1.7.3 Step-by-Step Example (Discrete)
+
+Let’s find MGF of a discrete RV:
+
+### 🎲 Example: Let $ X $ take values $ 0, 1 $ with $ P(X=0)=0.4, \ P(X=1)=0.6 $
+
+Step 1: Write the definition:
+$$
+M_X(t) = E[e^{tX}] = \sum_x e^{tx} \cdot P(X = x)
+$$
+
+Step 2: Plug values:
+$$
+M_X(t) = e^{t \cdot 0} \cdot 0.4 + e^{t \cdot 1} \cdot 0.6 = 0.4 + 0.6e^t
+$$
+
+---
+
+### ✅ Mean from MGF:
+Differentiate and plug $ t = 0 $
+
+$$
+M'_X(t) = 0.6e^t \quad \Rightarrow M'_X(0) = 0.6
+\Rightarrow E[X] = 0.6
+$$
+
+---
+
+### ✅ Second Moment:
+$$
+M''_X(t) = 0.6e^t \Rightarrow M''_X(0) = 0.6
+\Rightarrow E[X^2] = 0.6
+$$
+
+### ✅ Variance:
+$$
+\text{Var}(X) = E[X^2] - (E[X])^2 = 0.6 - (0.6)^2 = 0.6 - 0.36 = 0.24
+$$
+
+---
+
+## 🔹 1.7.4 Step-by-Step Example (Continuous)
+
+### 🔍 Let $ X \sim \text{Exponential}(\lambda) $, PDF:  
+$$
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+$$
+
+Find MGF:
+$$
+M_X(t) = E[e^{tX}] = \int_0^\infty e^{tx} \cdot \lambda e^{-\lambda x} \, dx
+= \lambda \int_0^\infty e^{(t - \lambda)x} \, dx
+$$
+
+This converges **only when $ t < \lambda $**:
+$$
+M_X(t) = \frac{\lambda}{\lambda - t}
+$$
+
+From here:
+- $ M'_X(0) = \frac{\lambda}{(\lambda - 0)^2} = \frac{1}{\lambda} $
+- So, $ E[X] = \frac{1}{\lambda} $
+- And $ \text{Var}(X) = \frac{1}{\lambda^2} $
+
+---
+
+## 🎯 Summary
+
+| Feature | Formula / Insight |
+|--------|-------------------|
+| Definition | $ M_X(t) = E[e^{tX}] $ |
+| 1st moment | $ M'_X(0) = E[X] $ |
+| 2nd moment | $ M''_X(0) = E[X^2] $ |
+| Variance | $ M''_X(0) - (M'_X(0))^2 $ |
+| MGF of sum | $ M_{X+Y}(t) = M_X(t) \cdot M_Y(t) $ (if independent) |
+
+---
+
+## 🧠 Tips:
+- **Always check convergence range** of MGF.
+- When asked about MGF in exams, **differentiate clearly** and show evaluation at $ t = 0 $.
+- For known distributions, memorize MGFs for speed (Bernoulli, Binomial, Poisson, etc.)
