@@ -1267,3 +1267,105 @@ If you only care about **how many hours were studied**, no matter how many assig
 |------|-------|----------------|----------------|
 | Discrete | $ P(x, y) $ | $ \sum_y P(x, y) $ | $ \sum_x P(x, y) $ |
 | Continuous | $ f(x, y) $ | $ \int f(x, y)\,dy $ | $ \int f(x, y)\,dx $ |
+
+## ✅ **2.3: Conditional Distributions**
+
+Conditional distributions tell us how the probability of one variable behaves *under the condition* that we know the value of the other variable.
+
+---
+
+## 🔷 2.3.1 Discrete Case — Conditional PMF
+
+Let $ X $ and $ Y $ be discrete random variables with a known **joint PMF** $ P(X = x, Y = y) $.
+
+Then the **conditional probability** of $ X = x $ given $ Y = y $ is:
+
+$$
+P(X = x \mid Y = y) = \frac{P(X = x, Y = y)}{P_Y(y)} \quad \text{(if } P_Y(y) > 0 \text{)}
+$$
+
+Likewise:
+$$
+P(Y = y \mid X = x) = \frac{P(X = x, Y = y)}{P_X(x)}
+$$
+
+---
+
+### 🔸 Example
+
+Using the same table from earlier:
+
+| $ P(X = x, Y = y) $ | $ Y = 0 $ | $ Y = 1 $ | $ P_X(x) $ |
+|------------------------|------------|------------|---------------|
+| $ X = 1 $           | 0.2        | 0.3        | 0.5           |
+| $ X = 2 $           | 0.1        | 0.4        | 0.5           |
+| $ P_Y(y) $          | 0.3        | 0.7        |               |
+
+Now:
+- $ P(X = 1 \mid Y = 1) = \frac{0.3}{0.7} = \frac{3}{7} $
+- $ P(Y = 0 \mid X = 2) = \frac{0.1}{0.5} = \frac{1}{5} $
+
+✅ Always check the denominator is not zero.
+
+---
+
+## 🔷 2.3.2 Continuous Case — Conditional PDF
+
+Let $ f(x, y) $ be a joint PDF. Then:
+
+$$
+f_{X \mid Y}(x \mid y) = \frac{f(x, y)}{f_Y(y)} \quad \text{(if } f_Y(y) > 0 \text{)}
+$$
+
+Similarly:
+
+$$
+f_{Y \mid X}(y \mid x) = \frac{f(x, y)}{f_X(x)}
+$$
+
+---
+
+### 🔸 Example
+
+Given:
+
+$$
+f(x, y) = 4xy,\quad 0 \le x, y \le 1
+$$
+Previously we found:
+- $ f_X(x) = 2x $
+- $ f_Y(y) = 2y $
+
+Now:
+
+$$
+f_{X \mid Y}(x \mid y) = \frac{f(x, y)}{f_Y(y)} = \frac{4xy}{2y} = 2x
+\quad \text{(as long as } y > 0\text{)}
+$$
+
+$$
+f_{Y \mid X}(y \mid x) = \frac{4xy}{2x} = 2y
+\quad \text{(as long as } x > 0\text{)}
+$$
+
+💡 Notice: The conditional PDFs are the same as marginals in this case — this hints at independence (we’ll get to that next!).
+
+---
+
+## 🎯 Interpretation in Real Life
+
+Imagine you want to know:
+> “What is the distribution of **hours studied (X)** given that a student submitted **4 assignments (Y = 4)**?”
+
+You’d use the **conditional distribution** of $ X \mid Y = 4 $.
+
+This helps us **narrow down** the behavior of one variable when another is fixed.
+
+---
+
+## 🔁 Comparison Summary
+
+| Type | Conditional Formula |
+|------|---------------------|
+| Discrete | $ P(X = x \mid Y = y) = \frac{P(X = x, Y = y)}{P_Y(y)} $ |
+| Continuous | $ f_{X \mid Y}(x \mid y) = \frac{f(x, y)}{f_Y(y)} $ |
