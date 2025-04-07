@@ -1166,3 +1166,104 @@ For instance:
 | Joint Function | $ P(X = x, Y = y) $ | $ f(x, y) $ |
 | Total Sum | $ \sum_x \sum_y P(x, y) = 1 $ | $ \iint f(x, y)\,dx\,dy = 1 $ |
 | Probability in Region | Sum of entries | Double integral over region |
+
+## ✅ **2.2: Marginal Distributions**
+
+**Marginal distribution** gives us the probability distribution of a single random variable *ignoring* the other one.
+
+Basically:  
+> From the **joint distribution**, we "sum out" or "integrate out" the other variable.
+
+---
+
+## 🔷 2.2.1 Marginal Distribution (Discrete Case)
+
+Given the **joint PMF** $ P(X = x_i, Y = y_j) $, the **marginal PMF** of $ X $ is:
+
+$$
+P_X(x_i) = \sum_j P(X = x_i, Y = y_j)
+$$
+
+Similarly, the **marginal PMF** of $ Y $ is:
+
+$$
+P_Y(y_j) = \sum_i P(X = x_i, Y = y_j)
+$$
+
+---
+
+### 🔸 Example (From a Joint PMF Table)
+
+| $ P(X = x, Y = y) $ | $ Y = 0 $ | $ Y = 1 $ | Marginal $ P_X(x) $ |
+|------------------------|------------|------------|------------------------|
+| $ X = 1 $           | 0.2        | 0.3        | 0.2 + 0.3 = **0.5**    |
+| $ X = 2 $           | 0.1        | 0.4        | 0.1 + 0.4 = **0.5**    |
+| Marginal $ P_Y(y) $ | 0.3        | 0.7        |                        |
+
+$$
+\text{Check: } \sum P_X(x) = 0.5 + 0.5 = 1 ✅,\quad \sum P_Y(y) = 0.3 + 0.7 = 1 ✅
+$$
+
+---
+
+## 🔷 2.2.2 Marginal Distribution (Continuous Case)
+
+Given a **joint PDF** $ f(x, y) $, the **marginal PDF** of $ X $ is:
+
+$$
+f_X(x) = \int_{-\infty}^{\infty} f(x, y) \, dy
+$$
+
+And for $ Y $:
+
+$$
+f_Y(y) = \int_{-\infty}^{\infty} f(x, y) \, dx
+$$
+
+---
+
+### 🔸 Example
+
+Let:
+$$
+f(x, y) = 4xy, \quad 0 \leq x \leq 1,\ 0 \leq y \leq 1
+$$
+
+Find the marginal PDF of $ X $:
+
+$$
+f_X(x) = \int_0^1 4xy \, dy = 4x \int_0^1 y \, dy = 4x \cdot \left[ \frac{y^2}{2} \right]_0^1 = 4x \cdot \frac{1}{2} = 2x
+$$
+
+So,
+$$
+f_X(x) = 
+\begin{cases}
+2x, & 0 \leq x \leq 1 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+Similarly:
+$$
+f_Y(y) = \int_0^1 4xy \, dx = 4y \int_0^1 x \, dx = 4y \cdot \frac{1}{2} = 2y
+$$
+
+---
+
+## 🧠 Real-Life Analogy
+
+Suppose you record data about:
+- $ X $ = number of hours studied
+- $ Y $ = number of assignments submitted
+
+If you only care about **how many hours were studied**, no matter how many assignments were done, you'd compute the **marginal distribution of $ X $** by **summing over** $ Y $.
+
+---
+
+## ✅ Quick Summary
+
+| Type | Joint | Marginal of X | Marginal of Y |
+|------|-------|----------------|----------------|
+| Discrete | $ P(x, y) $ | $ \sum_y P(x, y) $ | $ \sum_x P(x, y) $ |
+| Continuous | $ f(x, y) $ | $ \int f(x, y)\,dy $ | $ \int f(x, y)\,dx $ |
