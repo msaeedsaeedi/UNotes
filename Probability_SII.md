@@ -1919,3 +1919,109 @@ $$
 | Correlation | Standardized | $ \rho = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \sigma_Y} $ |
 | Correlation | Range | $ -1 \le \rho \le 1 $ |
 | Variance of Sum | General | $ \operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y) $ |
+
+## ✅ **2.8: Chebyshev’s Inequality**
+
+Chebyshev's inequality gives us a **lower bound** for the probability that a random variable deviates from its mean.
+
+---
+
+## 🔷 2.8.1 **What is Chebyshev’s Inequality?**
+
+Chebyshev’s inequality states that for any random variable $ X $ with mean $ \mu $ and variance $ \sigma^2 $:
+
+$$
+P(|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}
+$$
+
+Where:
+- $ k $ is any positive number
+- $ \mu $ is the mean of $ X $
+- $ \sigma $ is the standard deviation of $ X $
+
+In words: **No more than $ \frac{1}{k^2} $ of the distribution lies more than $ k $ standard deviations away from the mean**.
+
+---
+
+## 🔷 2.8.2 **Interpretation**
+
+- The inequality gives us a **worst-case bound** on the probability that a value falls a certain distance away from the mean.
+- It’s **non-parametric**, meaning it works for any probability distribution (even those that are not normal).
+- As $ k $ increases, the probability of deviation decreases rapidly (quadratically).
+
+---
+
+## 🔷 2.8.3 **Examples**
+
+### 🔸 Example 1: Basic Application
+
+Let’s say we have a random variable $ X $ with:
+- Mean $ \mu = 5 $
+- Standard deviation $ \sigma = 2 $
+
+We want to know the probability that $ X $ deviates by more than 3 units from the mean (i.e., $ |X - 5| \geq 3 $).
+
+From Chebyshev’s inequality:
+$$
+P(|X - \mu| \geq 3) \leq \frac{1}{\left(\frac{3}{2}\right)^2} = \frac{1}{\left(1.5\right)^2} = \frac{1}{2.25} \approx 0.444
+$$
+
+So, the probability that $ X $ deviates more than 3 units from the mean is **at most 44.4%**.
+
+---
+
+### 🔸 Example 2: Interpretation for Larger Deviations
+
+Now, let’s see what happens when we look for a larger deviation, say $ 5 $ units.
+
+We use $ k = \frac{5}{2} = 2.5 $.
+
+Then:
+$$
+P(|X - \mu| \geq 5) \leq \frac{1}{(2.5)^2} = \frac{1}{6.25} = 0.16
+$$
+
+So, the probability that $ X $ deviates more than 5 units from the mean is **at most 16%**.
+
+---
+
+## 🔷 2.8.4 **Key Takeaways**
+
+- Chebyshev’s inequality is very general and can be applied to any distribution, whether or not it’s normal.
+- The inequality provides an **upper bound**, not the exact probability.
+- As $ k $ increases, the bound becomes tighter (less probability).
+- **The inequality is most useful** when we don’t know the exact form of the distribution (like in real-world situations).
+
+---
+
+### 🔷 Summary of Chebyshev's Inequality
+
+For a random variable $ X $ with mean $ \mu $ and variance $ \sigma^2 $, Chebyshev's inequality states:
+
+$$
+P(|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}
+$$
+
+- The bound decreases quadratically as $ k $ increases.
+- The inequality holds for **all** distributions (even non-normal).
+- It helps when we need a general estimate for tail probabilities in **non-parametric settings**.
+
+---
+
+### 📦 Example Question (Application)
+
+> Given a distribution with $ \mu = 10 $ and $ \sigma = 4 $, use Chebyshev’s inequality to find the probability that the random variable lies within 6 units of the mean.
+
+#### Solution:
+
+We’re asked for the probability that the value of $ X $ lies within 6 units of the mean:
+$$
+P(|X - \mu| \geq 6) \Rightarrow k = \frac{6}{4} = 1.5
+$$
+
+So:
+$$
+P(|X - 10| \geq 6) \leq \frac{1}{(1.5)^2} = \frac{1}{2.25} = 0.444
+$$
+
+Thus, the probability that $ X $ deviates by **more than 6 units** from the mean is **at most 44.4%**.
