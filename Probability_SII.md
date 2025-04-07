@@ -1380,11 +1380,11 @@ In other words:
 
 ## 🔷 2.4.1 Independence — Discrete Case
 
-Let $$ X $$ and $$ Y $$ be discrete random variables.
+Let $ X $ and $ Y $ be discrete random variables.
 
 ### 👉 Definition:
 
-$$ X $$ and $$ Y $$ are **independent** if and only if:
+$ X $ and $ Y $ are **independent** if and only if:
 
 $$
 P(X = x, Y = y) = P_X(x) \cdot P_Y(y) \quad \text{for all } x, y
@@ -1398,15 +1398,15 @@ That is, the **joint PMF** equals the **product of the marginals**.
 
 From earlier:
 
-| $$ P(X = x, Y = y) $$ | $$ Y = 0 $$ | $$ Y = 1 $$ | $$ P_X(x) $$ |
+| $ P(X = x, Y = y) $ | $ Y = 0 $ | $ Y = 1 $ | $ P_X(x) $ |
 |------------------------|------------|------------|--------------|
-| $$ X = 1 $$           | 0.2        | 0.3        | 0.5          |
-| $$ X = 2 $$           | 0.1        | 0.4        | 0.5          |
-| $$ P_Y(y) $$          | 0.3        | 0.7        |              |
+| $ X = 1 $           | 0.2        | 0.3        | 0.5          |
+| $ X = 2 $           | 0.1        | 0.4        | 0.5          |
+| $ P_Y(y) $          | 0.3        | 0.7        |              |
 
 Check:  
-$$ P(X = 1, Y = 0) = 0.2 $$  
-$$ P_X(1) \cdot P_Y(0) = 0.5 \cdot 0.3 = 0.15 \ne 0.2 $$
+$ P(X = 1, Y = 0) = 0.2 $  
+$ P_X(1) \cdot P_Y(0) = 0.5 \cdot 0.3 = 0.15 \ne 0.2 $
 
 ❌ So, **not independent**
 
@@ -1414,11 +1414,11 @@ $$ P_X(1) \cdot P_Y(0) = 0.5 \cdot 0.3 = 0.15 \ne 0.2 $$
 
 ## 🔷 2.4.2 Independence — Continuous Case
 
-Let $$ X $$ and $$ Y $$ be continuous random variables.
+Let $ X $ and $ Y $ be continuous random variables.
 
 ### 👉 Definition:
 
-$$ X $$ and $$ Y $$ are **independent** if and only if:
+$ X $ and $ Y $ are **independent** if and only if:
 
 $$
 f(x, y) = f_X(x) \cdot f_Y(y) \quad \text{for all } x, y
@@ -1436,8 +1436,8 @@ f(x, y) = 4xy,\quad 0 \le x, y \le 1
 $$
 
 From earlier:
-- $$ f_X(x) = 2x $$
-- $$ f_Y(y) = 2y $$
+- $ f_X(x) = 2x $
+- $ f_Y(y) = 2y $
 
 Now:
 $$
@@ -1466,10 +1466,10 @@ If the **conditional distribution equals the marginal**, the variables are **ind
 ## 🎯 Real-Life Example
 
 Let:
-- $$ X $$ = number of hours a student sleeps
-- $$ Y $$ = marks in a math quiz
+- $ X $ = number of hours a student sleeps
+- $ Y $ = marks in a math quiz
 
-If we find that knowing how much they sleep **does not change** the probability distribution of their marks, then $$ X $$ and $$ Y $$ are **independent**.
+If we find that knowing how much they sleep **does not change** the probability distribution of their marks, then $ X $ and $ Y $ are **independent**.
 
 But usually, there **is** some dependence in real life!
 
@@ -1479,5 +1479,5 @@ But usually, there **is** some dependence in real life!
 
 | Type | Independence Condition |
 |------|------------------------|
-| Discrete | $$ P(X = x, Y = y) = P_X(x) \cdot P_Y(y) $$ |
-| Continuous | $$ f(x, y) = f_X(x) \cdot f_Y(y) $$ |
+| Discrete | $ P(X = x, Y = y) = P_X(x) \cdot P_Y(y) $ |
+| Continuous | $ f(x, y) = f_X(x) \cdot f_Y(y) $ |
