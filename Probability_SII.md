@@ -1481,3 +1481,132 @@ But usually, there **is** some dependence in real life!
 |------|------------------------|
 | Discrete | $ P(X = x, Y = y) = P_X(x) \cdot P_Y(y) $ |
 | Continuous | $ f(x, y) = f_X(x) \cdot f_Y(y) $ |
+
+## ✅ **2.5: Variance and Covariance**
+
+---
+
+## 🔷 2.5.1 Variance Recap (for a Single RV)
+
+For a single random variable $ X $, we define:
+
+$$
+\operatorname{Var}(X) = E[(X - \mu_X)^2] = E[X^2] - (E[X])^2
+$$
+
+It tells us **how much the values of X deviate from the mean**.
+
+---
+
+## 🔷 2.5.2 Covariance — Measuring Linear Relationship
+
+Covariance tells us **how two random variables vary together**.
+
+$$
+\operatorname{Cov}(X, Y) = E[(X - \mu_X)(Y - \mu_Y)]
+$$
+
+Alternate formula:
+
+$$
+\operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y]
+$$
+
+---
+
+### 🟩 Interpretation:
+
+- **Positive Covariance**: When $ X $ increases, $ Y $ tends to increase.
+- **Negative Covariance**: When $ X $ increases, $ Y $ tends to decrease.
+- **Zero Covariance**: No linear relationship.
+
+> Covariance gives the **direction** of the relationship, but **not strength or scale**.
+
+---
+
+### 🔸 Example (Discrete Case)
+
+| $ (X, Y) $ | $ P(X, Y) $ |
+|-------------|---------------|
+| (1, 1)       | 0.25          |
+| (1, 3)       | 0.25          |
+| (3, 1)       | 0.25          |
+| (3, 3)       | 0.25          |
+
+Find:
+- $ E[X] = 0.25(1 + 1 + 3 + 3) = 2 $
+- $ E[Y] = 0.25(1 + 3 + 1 + 3) = 2 $
+- $ E[XY] = 0.25(1 + 3 + 3 + 9) = 4 $
+
+Then:
+$$
+\operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y] = 4 - (2)(2) = 0
+$$
+
+✅ So X and Y are **uncorrelated**.
+
+---
+
+### 🔸 Example (Continuous Case)
+
+Let:
+$$
+f(x, y) = 4xy,\quad 0 \le x, y \le 1
+$$
+
+We’ve already found:
+- $ E[X] = \frac{2}{3} $, $ E[Y] = \frac{2}{3} $
+
+Now:
+$$
+E[XY] = \int_0^1 \int_0^1 x y \cdot 4xy \, dx\,dy = \int_0^1 \int_0^1 4x^2y^2 \, dx\,dy
+$$
+
+Compute:
+- $ \int_0^1 x^2 dx = \frac{1}{3} $, $ \int_0^1 y^2 dy = \frac{1}{3} $
+- So $ E[XY] = 4 \cdot \frac{1}{3} \cdot \frac{1}{3} = \frac{4}{9} $
+
+Now:
+$$
+\operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y] = \frac{4}{9} - \frac{4}{9} = 0
+$$
+
+Again, **uncorrelated**.
+
+---
+
+## 🔷 2.5.3 Properties of Covariance
+
+1. **Symmetry**:  
+   $$
+   \operatorname{Cov}(X, Y) = \operatorname{Cov}(Y, X)
+   $$
+
+2. **Cov(X, X) = Var(X)**
+
+3. **Linearity**:  
+   For constants $ a, b, c, d $:
+
+   $$
+   \operatorname{Cov}(aX + b, cY + d) = ac \cdot \operatorname{Cov}(X, Y)
+   $$
+
+---
+
+## 🔷 2.5.4 Variance of a Sum
+
+$$
+\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2 \cdot \operatorname{Cov}(X, Y)
+$$
+
+⚠️ Use this when computing variance of totals (e.g., total score of 2 subjects).
+
+---
+
+## 🔁 Summary
+
+| Concept       | Formula |
+|---------------|---------|
+| $ \operatorname{Var}(X) $ | $ E[X^2] - (E[X])^2 $ |
+| $ \operatorname{Cov}(X, Y) $ | $ E[XY] - E[X]E[Y] $ |
+| $ \operatorname{Var}(X+Y) $ | $ \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y) $ |
