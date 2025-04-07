@@ -1074,3 +1074,95 @@ We covered:
 - Moments  
 - MGF & CGF  
 - Median, Mode, Quartiles  
+
+## ✅ **2.1: Joint Distributions of Discrete and Continuous Random Variables**
+
+When studying multiple random variables together (like $ X $ and $ Y $), we use **joint distributions** to understand how they behave together.
+
+---
+
+## 🔷 2.1.1 Joint Probability Mass Function (Joint PMF) — *Discrete Case*
+
+If $ X $ and $ Y $ are discrete random variables, their **joint PMF** is:
+
+$$
+P(X = x, Y = y) = \text{Probability that } X = x \text{ and } Y = y
+$$
+
+It satisfies:
+1. $ P(X = x_i, Y = y_j) \geq 0 $
+2. $ \sum_i \sum_j P(X = x_i, Y = y_j) = 1 $
+
+---
+
+### 🔸 Example (Joint PMF Table)
+
+Let’s say $ X \in \{1, 2\}, Y \in \{0, 1\} $, and:
+
+| $ P(X = x, Y = y) $ | $ Y = 0 $ | $ Y = 1 $ |
+|------------------------|------------|------------|
+| $ X = 1 $           | 0.2        | 0.3        |
+| $ X = 2 $           | 0.1        | 0.4        |
+
+Check:
+$$
+0.2 + 0.3 + 0.1 + 0.4 = 1 ✅
+$$
+
+---
+
+## 🔷 2.1.2 Joint Probability Density Function (Joint PDF) — *Continuous Case*
+
+If $ X $ and $ Y $ are continuous random variables, then their **joint PDF** is a function $ f(x, y) $ such that:
+
+$$
+P((X, Y) \in A) = \iint_A f(x, y) \, dx\,dy
+$$
+
+It must satisfy:
+
+1. $ f(x, y) \geq 0 $
+2. $ \iint_{-\infty}^\infty f(x, y)\,dx\,dy = 1 $
+
+---
+
+### 🔸 Example (Joint PDF)
+
+Let:
+
+$$
+f(x, y) = 
+\begin{cases}
+4xy, & 0 \leq x \leq 1,\, 0 \leq y \leq 1 \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+Let’s verify it’s a valid joint PDF:
+
+$$
+\iint_0^1 \int_0^1 4xy\,dx\,dy = \int_0^1 \left[2x^2 y\right]_0^1 dy = \int_0^1 2y\,dy = \left[y^2\right]_0^1 = 1 ✅
+$$
+
+---
+
+## 🧠 Real-Life Interpretation
+
+Let’s say:
+- $ X $ = time someone studies per day
+- $ Y $ = number of assignments completed
+
+A joint distribution shows how **time and performance** relate.
+
+For instance:
+- $ P(X = 2, Y = 4) = 0.1 $ means there's a 10% chance the student studies 2 hours and completes 4 assignments.
+
+---
+
+## 🎯 Summary Table
+
+| Concept | Discrete | Continuous |
+|--------|----------|------------|
+| Joint Function | $ P(X = x, Y = y) $ | $ f(x, y) $ |
+| Total Sum | $ \sum_x \sum_y P(x, y) = 1 $ | $ \iint f(x, y)\,dx\,dy = 1 $ |
+| Probability in Region | Sum of entries | Double integral over region |
