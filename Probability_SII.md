@@ -1610,3 +1610,136 @@ $$
 | $ \operatorname{Var}(X) $ | $ E[X^2] - (E[X])^2 $ |
 | $ \operatorname{Cov}(X, Y) $ | $ E[XY] - E[X]E[Y] $ |
 | $ \operatorname{Var}(X+Y) $ | $ \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y) $ |
+
+## ✅ **2.6: Correlation Coefficient**
+
+---
+
+## 🔷 2.6.1 What is the Correlation Coefficient?
+
+The **correlation coefficient**, denoted by $ \rho_{X,Y} $ (rho), **standardizes covariance**.
+
+$$
+\rho_{X,Y} = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}
+$$
+
+Where:
+- $ \sigma_X = \sqrt{\operatorname{Var}(X)} $
+- $ \sigma_Y = \sqrt{\operatorname{Var}(Y)} $
+
+This tells us **how strongly X and Y are linearly related**, and the value is **always between -1 and 1**.
+
+---
+
+## 🔷 2.6.2 Interpretation
+
+| Value of $ \rho $ | Strength of Relationship |
+|---------------------|--------------------------|
+| $ \rho = 1 $      | Perfect positive linear relationship |
+| $ \rho = -1 $     | Perfect negative linear relationship |
+| $ \rho = 0 $      | No linear relationship (could still be non-linear) |
+| $ \rho \approx 0.5 $ | Moderate positive linear relationship |
+| $ \rho \approx -0.5 $ | Moderate negative linear relationship |
+
+> **Key Point**: Correlation only captures **linear** dependence. Two variables may have **nonlinear dependence** and still have $ \rho = 0 $!
+
+---
+
+## 🔸 Example 1 (Discrete)
+
+From previous example:
+
+| (X, Y) | P(X, Y) |
+|--------|---------|
+| (1, 1) | 0.25    |
+| (1, 3) | 0.25    |
+| (3, 1) | 0.25    |
+| (3, 3) | 0.25    |
+
+We already found:
+
+- $ E[X] = 2 $, $ E[Y] = 2 $
+- $ E[XY] = 4 $
+- $ \operatorname{Cov}(X, Y) = 4 - (2)(2) = 0 $
+
+Next, compute:
+
+$$
+E[X^2] = 0.25(1^2 + 1^2 + 3^2 + 3^2) = 0.25(1 + 1 + 9 + 9) = 5
+\Rightarrow \operatorname{Var}(X) = 5 - 4 = 1
+$$
+
+Similarly:
+$$
+\operatorname{Var}(Y) = 1
+\Rightarrow \sigma_X = \sigma_Y = 1
+$$
+
+So:
+$$
+\rho_{X,Y} = \frac{0}{1 \cdot 1} = 0
+$$
+
+✅ No linear correlation.
+
+---
+
+## 🔸 Example 2 (Simple Correlated Pair)
+
+Let:
+- $ X \in \{1, 2, 3\} $, with $ P(X = x) = \frac{1}{3} $
+- $ Y = 2X $
+
+So:
+
+| X | Y | P(X) |
+|---|---|------|
+| 1 | 2 | 1/3  |
+| 2 | 4 | 1/3  |
+| 3 | 6 | 1/3  |
+
+Now compute:
+
+- $ E[X] = \frac{1+2+3}{3} = 2 $
+- $ E[Y] = \frac{2+4+6}{3} = 4 $
+- $ E[XY] = \frac{1 \cdot 2 + 2 \cdot 4 + 3 \cdot 6}{3} = \frac{2 + 8 + 18}{3} = \frac{28}{3} $
+
+Then:
+
+$$
+\operatorname{Cov}(X, Y) = \frac{28}{3} - (2)(4) = \frac{28}{3} - 8 = \frac{4}{3}
+$$
+
+Now:
+
+- $ E[X^2] = \frac{1^2 + 2^2 + 3^2}{3} = \frac{14}{3} $
+- $ \operatorname{Var}(X) = \frac{14}{3} - 4 = \frac{2}{3} $
+- $ \operatorname{Var}(Y) = \operatorname{Var}(2X) = 4 \cdot \operatorname{Var}(X) = \frac{8}{3} $
+
+Then:
+
+$$
+\rho_{X,Y} = \frac{\frac{4}{3}}{\sqrt{\frac{2}{3}} \cdot \sqrt{\frac{8}{3}}} = \frac{4}{\sqrt{2 \cdot 8}} = \frac{4}{\sqrt{16}} = 1
+$$
+
+✅ Perfect linear correlation.
+
+---
+
+## 🔷 2.6.3 Properties of Correlation
+
+- $ -1 \le \rho_{X,Y} \le 1 $
+- $ \rho_{X,Y} = \rho_{Y,X} $
+- $ \rho_{X,Y} = 0 $ ⟹ **X and Y are uncorrelated**, but not necessarily independent
+- **If X and Y are independent**, then $ \rho = 0 $ (but not the reverse!)
+
+---
+
+## ✅ Summary
+
+| Concept         | Formula |
+|----------------|---------|
+| Correlation Coefficient | $ \rho_{X,Y} = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y} $ |
+| Range | $ -1 \le \rho \le 1 $ |
+| Zero correlation | No linear relationship |
+| Correlation = 1 or -1 | Perfect linear relationship |
