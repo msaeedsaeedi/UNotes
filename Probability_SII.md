@@ -1743,3 +1743,179 @@ $$
 | Range | $ -1 \le \rho \le 1 $ |
 | Zero correlation | No linear relationship |
 | Correlation = 1 or -1 | Perfect linear relationship |
+
+## ✅ **2.7: Properties of Covariance, Variance, and Correlation**
+
+We’ll go through them category-wise so it’s clean and easy to revise.
+
+---
+
+## 🔷 2.7.1 **Variance Properties**
+
+Let $ X $ be a random variable and $ a, b $ be constants:
+
+### 🔹 1. **Variance of a Constant:**
+$$
+\operatorname{Var}(c) = 0
+$$
+
+A constant doesn’t vary, so its variance is 0.
+
+---
+
+### 🔹 2. **Scaling:**
+$$
+\operatorname{Var}(aX) = a^2 \cdot \operatorname{Var}(X)
+$$
+
+Multiplying a random variable scales its variance **quadratically** (not linearly!).
+
+---
+
+### 🔹 3. **Shift Doesn’t Affect Variance:**
+$$
+\operatorname{Var}(X + b) = \operatorname{Var}(X)
+$$
+
+Adding a constant only shifts the values, doesn’t change the spread.
+
+---
+
+### 🔹 4. **Variance of a Sum (General Case):**
+$$
+\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y)
+$$
+
+---
+
+### 🔹 5. **If X and Y are Independent:**
+$$
+\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)
+$$
+
+Because:
+$$
+\operatorname{Cov}(X, Y) = 0 \quad \text{(if independent)}
+$$
+
+---
+
+## 🔷 2.7.2 **Covariance Properties**
+
+For constants $ a, b, c, d $, and random variables $ X, Y $:
+
+### 🔹 1. **Covariance is Symmetric:**
+$$
+\operatorname{Cov}(X, Y) = \operatorname{Cov}(Y, X)
+$$
+
+---
+
+### 🔹 2. **Covariance of Independent Variables:**
+$$
+X \perp Y \Rightarrow \operatorname{Cov}(X, Y) = 0
+$$
+
+But **not the reverse!**
+
+---
+
+### 🔹 3. **Cov(X, X) = Var(X)**  
+Self-covariance is variance.
+
+---
+
+### 🔹 4. **Linearity (Scalar Multiplication):**
+$$
+\operatorname{Cov}(aX, bY) = ab \cdot \operatorname{Cov}(X, Y)
+$$
+
+---
+
+### 🔹 5. **Linearity (Addition/Subtraction):**
+$$
+\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y, Z)
+$$
+
+In general, Cov is **linear in each argument**.
+
+---
+
+### 🔹 6. **Covariance with Constant:**
+$$
+\operatorname{Cov}(X, c) = 0
+$$
+
+Because a constant has no variation.
+
+---
+
+## 🔷 2.7.3 **Correlation Properties**
+
+Let $ \rho = \text{Corr}(X, Y) $:
+
+### 🔹 1. **Bounds:**
+$$
+-1 \leq \rho \leq 1
+$$
+
+### 🔹 2. **Perfect Correlation:**
+- $ \rho = 1 $: $ Y = aX + b $, with $ a > 0 $
+- $ \rho = -1 $: $ Y = aX + b $, with $ a < 0 $
+
+Linear relationships only.
+
+---
+
+### 🔹 3. **Independence Implies Zero Correlation**  
+But **zero correlation ≠ independence** (unless joint distribution is normal or special).
+
+---
+
+### 🔹 4. **Invariant to Shifts and Scales:**
+
+$$
+\rho_{X,Y} = \rho_{aX+b, cY+d} \quad \text{(if } a, c > 0 \text{)}
+$$
+
+This makes correlation very powerful: **unit-less and standardized**.
+
+---
+
+## 📦 Example Question (Mixed Concepts)
+
+> Let $ X, Y $ be RVs such that:
+> - $ \operatorname{Var}(X) = 4 $, $ \operatorname{Var}(Y) = 9 $
+> - $ \operatorname{Cov}(X, Y) = 6 $
+
+### Find:
+
+- $ \operatorname{Var}(X + Y) $
+- $ \rho_{X,Y} $
+
+---
+
+**Solution:**
+
+$$
+\operatorname{Var}(X+Y) = 4 + 9 + 2(6) = 25
+$$
+
+$$
+\rho = \frac{\operatorname{Cov}(X,Y)}{\sigma_X \cdot \sigma_Y} = \frac{6}{\sqrt{4} \cdot \sqrt{9}} = \frac{6}{2 \cdot 3} = 1
+$$
+
+✅ Perfectly positively correlated!
+
+---
+
+## ✍️ Summary Table
+
+| Concept | Property | Formula |
+|--------|----------|---------|
+| Variance | Scaling | $ \operatorname{Var}(aX) = a^2 \cdot \operatorname{Var}(X) $ |
+| Covariance | Symmetry | $ \operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X) $ |
+| Covariance | Linear Combination | $ \operatorname{Cov}(aX+b, cY+d) = ac \cdot \operatorname{Cov}(X, Y) $ |
+| Correlation | Standardized | $ \rho = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \sigma_Y} $ |
+| Correlation | Range | $ -1 \le \rho \le 1 $ |
+| Variance of Sum | General | $ \operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y) $ |
