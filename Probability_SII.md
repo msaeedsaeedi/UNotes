@@ -2394,3 +2394,120 @@ $$
    - $ P(X \leq x) $ often requires either:
      - Direct calculation using the PMF
      - Binomial tables / software
+
+---
+
+## 📌 **3.3 Multinomial Distribution**
+
+The **Multinomial Distribution** generalizes the Binomial Distribution from two categories (success/failure) to **$ k \geq 2 $** categories.
+
+---
+
+### 🔹 Random Variable Definition
+
+Let:
+- We perform $ n $ independent trials.
+- Each trial results in one of **$ k $** outcomes $ C_1, C_2, \dots, C_k $
+- Let $ p_1, p_2, \dots, p_k $ be the respective probabilities such that:
+
+$$
+\sum_{i=1}^{k} p_i = 1, \quad 0 \leq p_i \leq 1
+$$
+
+Let $ X_1, X_2, \dots, X_k $ be the number of times each outcome occurs in $ n $ trials.
+
+Then the joint distribution of $ (X_1, X_2, \dots, X_k) \sim \text{Multinomial}(n; p_1, p_2, \dots, p_k) $
+
+---
+
+### 🔸 3.3.1 Probability Mass Function (PMF)
+
+$$
+P(X_1 = x_1, \dots, X_k = x_k) = \frac{n!}{x_1! x_2! \cdots x_k!} p_1^{x_1} p_2^{x_2} \cdots p_k^{x_k}
+$$
+
+- where $ \sum_{i=1}^{k} x_i = n $
+- $ x_i \in \{0, 1, ..., n\} $
+
+---
+
+### 🔸 3.3.2 Expected Value
+
+For each $ i \in \{1, 2, \dots, k\} $:
+
+$$
+\mathbb{E}[X_i] = n \cdot p_i
+$$
+
+Same as binomial intuition: in $ n $ trials, the expected number of times outcome $ i $ occurs is $ np_i $
+
+---
+
+### 🔸 3.3.3 Variance
+
+$$
+\text{Var}(X_i) = n \cdot p_i \cdot (1 - p_i)
+$$
+
+Each outcome behaves like a binomial, but they’re not independent.
+
+---
+
+### 🔸 3.3.4 Covariance
+
+For $ i \neq j $:
+
+$$
+\text{Cov}(X_i, X_j) = -n \cdot p_i \cdot p_j
+$$
+
+This makes sense: if more trials result in category $ i $, fewer can result in category $ j $, creating negative covariance.
+
+---
+
+### 🔸 3.3.5 Moment Generating Function (MGF)
+
+The MGF of the multinomial vector $ \mathbf{X} = (X_1, ..., X_k) $ is:
+
+$$
+M_{\mathbf{X}}(t_1, t_2, ..., t_k) = \left( \sum_{i=1}^k p_i e^{t_i} \right)^n
+$$
+
+This is a **multi-variable MGF**, so moments are found using partial derivatives.
+
+---
+
+### 🔸 3.3.6 Skewness & Kurtosis
+
+- Typically **not defined** or **not commonly used** for the entire multinomial vector.
+- But **each marginal** $ X_i \sim \text{Binomial}(n, p_i) $, so:
+  - Skewness: $ \frac{1 - 2p_i}{\sqrt{np_i(1 - p_i)}} $
+  - Kurtosis: $ \frac{1 - 6p_i(1 - p_i)}{np_i(1 - p_i)} + 3 $
+
+---
+
+### 🧠 Trick Question Patterns
+
+---
+
+1. **Example Setup:**
+
+> A die is rolled 10 times. Let $ X_1 $ = number of 1’s, $ X_2 $ = number of 2’s, ..., $ X_6 $ = number of 6’s.
+
+- $ \mathbf{X} \sim \text{Multinomial}(10; \frac{1}{6}, ..., \frac{1}{6}) $
+- $ \mathbb{E}[X_i] = 10 \cdot \frac{1}{6} \approx 1.67 $
+- $ \text{Var}(X_i) = 10 \cdot \frac{1}{6} \cdot \frac{5}{6} = \frac{50}{36} $
+- $ \text{Cov}(X_i, X_j) = -10 \cdot \frac{1}{6} \cdot \frac{1}{6} = -\frac{10}{36} $
+
+---
+
+2. **Constraint-based question:**
+
+> If $ X_1 + X_2 + X_3 = 10 $, find:
+- $ \mathbb{E}[X_1 - X_2] = \mathbb{E}[X_1] - \mathbb{E}[X_2] = n(p_1 - p_2) $
+
+---
+
+3. **MGF application:**
+
+> Use $ \left(\sum p_i e^{t_i}\right)^n $ to extract mixed moments like $ \mathbb{E}[X_1 X_2] $ by partial derivatives.
