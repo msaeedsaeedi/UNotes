@@ -490,7 +490,7 @@ So, **independent**
 For a single random variable $X$, we define:
 
 $$
-\operatorname{Var}(X) = E[(X - \mu_X)^2] = E[X^2] - (E[X])^2
+\operatorname*{Var}(X) = E[(X - \mu_X)^2] = E[X^2] - (E[X])^2
 $$
 
 It tells us **how much the values of X deviate from the mean**.
@@ -502,13 +502,13 @@ It tells us **how much the values of X deviate from the mean**.
 Covariance tells us **how two random variables vary together**.
 
 $$
-\operatorname{Cov}(X, Y) = E[(X - \mu_X)(Y - \mu_Y)]
+\operatorname*{Cov}(X, Y) = E[(X - \mu_X)(Y - \mu_Y)]
 $$
 
 Alternate formula:
 
 $$
-\operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y]
+\operatorname*{Cov}(X, Y) = E[XY] - E[X]E[Y]
 $$
 
 ---
@@ -539,7 +539,7 @@ Find:
 
 Then:
 $$
-\operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y] = 4 - (2)(2) = 0
+\operatorname*{Cov}(X, Y) = E[XY] - E[X]E[Y] = 4 - (2)(2) = 0
 $$
 
 So X and Y are **uncorrelated**.
@@ -567,7 +567,7 @@ Compute:
 
 Now:
 $$
-\operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y] = \frac{4}{9} - \frac{4}{9} = 0
+\operatorname*{Cov}(X, Y) = E[XY] - E[X]E[Y] = \frac{4}{9} - \frac{4}{9} = 0
 $$
 
 Again, **uncorrelated**.
@@ -578,7 +578,7 @@ Again, **uncorrelated**.
 
 1. **Symmetry**:  
    $$
-   \operatorname{Cov}(X, Y) = \operatorname{Cov}(Y, X)
+   \operatorname*{Cov}(X, Y) = \operatorname*{Cov}(Y, X)
    $$
 
 2. **Cov(X, X) = Var(X)**
@@ -587,7 +587,7 @@ Again, **uncorrelated**.
    For constants $a, b, c, d$:
 
    $$
-   \operatorname{Cov}(aX + b, cY + d) = ac \cdot \operatorname{Cov}(X, Y)
+   \operatorname*{Cov}(aX + b, cY + d) = ac \cdot \operatorname*{Cov}(X, Y)
    $$
 
 ---
@@ -595,7 +595,7 @@ Again, **uncorrelated**.
 ### 2.5.4 Variance of a Sum
 
 $$
-\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2 \cdot \operatorname{Cov}(X, Y)
+\operatorname*{Var}(X + Y) = \operatorname*{Var}(X) + \operatorname*{Var}(Y) + 2 \cdot \operatorname*{Cov}(X, Y)
 $$
 
 Use this when computing variance of totals (e.g., total score of 2 subjects).
@@ -611,12 +611,12 @@ Use this when computing variance of totals (e.g., total score of 2 subjects).
 The **correlation coefficient**, denoted by $\rho_{X,Y}$ (rho), **standardizes covariance**.
 
 $$
-\rho_{X,Y} = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}
+\rho_{X,Y} = \frac{\operatorname*{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}
 $$
 
 Where:
-- $\sigma_X = \sqrt{\operatorname{Var}(X)}$
-- $\sigma_Y = \sqrt{\operatorname{Var}(Y)}$
+- $\sigma_X = \sqrt{\operatorname*{Var}(X)}$
+- $\sigma_Y = \sqrt{\operatorname*{Var}(Y)}$
 
 This tells us **how strongly X and Y are linearly related**, and the value is **always between -1 and 1**.
 
@@ -651,18 +651,18 @@ We already found:
 
 - $E[X] = 2$, $E[Y] = 2$
 - $E[XY] = 4$
-- $\operatorname{Cov}(X, Y) = 4 - (2)(2) = 0$
+- $\operatorname*{Cov}(X, Y) = 4 - (2)(2) = 0$
 
 Next, compute:
 
 $$
 E[X^2] = 0.25(1^2 + 1^2 + 3^2 + 3^2) = 0.25(1 + 1 + 9 + 9) = 5
-\Rightarrow \operatorname{Var}(X) = 5 - 4 = 1
+\Rightarrow \operatorname*{Var}(X) = 5 - 4 = 1
 $$
 
 Similarly:
 $$
-\operatorname{Var}(Y) = 1
+\operatorname*{Var}(Y) = 1
 \Rightarrow \sigma_X = \sigma_Y = 1
 $$
 
@@ -698,14 +698,14 @@ Now compute:
 Then:
 
 $$
-\operatorname{Cov}(X, Y) = \frac{28}{3} - (2)(4) = \frac{28}{3} - 8 = \frac{4}{3}
+\operatorname*{Cov}(X, Y) = \frac{28}{3} - (2)(4) = \frac{28}{3} - 8 = \frac{4}{3}
 $$
 
 Now:
 
 - $E[X^2] = \frac{1^2 + 2^2 + 3^2}{3} = \frac{14}{3}$
-- $\operatorname{Var}(X) = \frac{14}{3} - 4 = \frac{2}{3}$
-- $\operatorname{Var}(Y) = \operatorname{Var}(2X) = 4 \cdot \operatorname{Var}(X) = \frac{8}{3}$
+- $\operatorname*{Var}(X) = \frac{14}{3} - 4 = \frac{2}{3}$
+- $\operatorname*{Var}(Y) = \operatorname*{Var}(2X) = 4 \cdot \operatorname*{Var}(X) = \frac{8}{3}$
 
 Then:
 
@@ -738,7 +738,7 @@ Let $X$ be a random variable and $a, b$ be constants:
 
 #### 1. **Variance of a Constant:**
 $$
-\operatorname{Var}(c) = 0
+\operatorname*{Var}(c) = 0
 $$
 
 A constant doesn’t vary, so its variance is 0.
@@ -747,7 +747,7 @@ A constant doesn’t vary, so its variance is 0.
 
 #### 2. **Scaling:**
 $$
-\operatorname{Var}(aX) = a^2 \cdot \operatorname{Var}(X)
+\operatorname*{Var}(aX) = a^2 \cdot \operatorname*{Var}(X)
 $$
 
 Multiplying a random variable scales its variance **quadratically** (not linearly!).
@@ -756,7 +756,7 @@ Multiplying a random variable scales its variance **quadratically** (not linearl
 
 #### 3. **Shift Doesn’t Affect Variance:**
 $$
-\operatorname{Var}(X + b) = \operatorname{Var}(X)
+\operatorname*{Var}(X + b) = \operatorname*{Var}(X)
 $$
 
 Adding a constant only shifts the values, doesn’t change the spread.
@@ -765,19 +765,19 @@ Adding a constant only shifts the values, doesn’t change the spread.
 
 #### 4. **Variance of a Sum (General Case):**
 $$
-\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y)
+\operatorname*{Var}(X + Y) = \operatorname*{Var}(X) + \operatorname*{Var}(Y) + 2\operatorname*{Cov}(X, Y)
 $$
 
 ---
 
 #### 5. **If X and Y are Independent:**
 $$
-\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)
+\operatorname*{Var}(X + Y) = \operatorname*{Var}(X) + \operatorname*{Var}(Y)
 $$
 
 Because:
 $$
-\operatorname{Cov}(X, Y) = 0 \quad \text{(if independent)}
+\operatorname*{Cov}(X, Y) = 0 \quad \text{(if independent)}
 $$
 
 ---
@@ -788,14 +788,14 @@ For constants $a, b, c, d$, and random variables $X, Y$:
 
 #### 1. **Covariance is Symmetric:**
 $$
-\operatorname{Cov}(X, Y) = \operatorname{Cov}(Y, X)
+\operatorname*{Cov}(X, Y) = \operatorname*{Cov}(Y, X)
 $$
 
 ---
 
 #### 2. **Covariance of Independent Variables:**
 $$
-X \perp Y \Rightarrow \operatorname{Cov}(X, Y) = 0
+X \perp Y \Rightarrow \operatorname*{Cov}(X, Y) = 0
 $$
 
 But **not the reverse!**
@@ -809,14 +809,14 @@ Self-covariance is variance.
 
 #### 4. **Linearity (Scalar Multiplication):**
 $$
-\operatorname{Cov}(aX, bY) = ab \cdot \operatorname{Cov}(X, Y)
+\operatorname*{Cov}(aX, bY) = ab \cdot \operatorname*{Cov}(X, Y)
 $$
 
 ---
 
 #### 5. **Linearity (Addition/Subtraction):**
 $$
-\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y, Z)
+\operatorname*{Cov}(X + Y, Z) = \operatorname*{Cov}(X, Z) + \operatorname*{Cov}(Y, Z)
 $$
 
 In general, Cov is **linear in each argument**.
@@ -825,7 +825,7 @@ In general, Cov is **linear in each argument**.
 
 #### 6. **Covariance with Constant:**
 $$
-\operatorname{Cov}(X, c) = 0
+\operatorname*{Cov}(X, c) = 0
 $$
 
 Because a constant has no variation.
@@ -867,12 +867,12 @@ This makes correlation very powerful: **unit-less and standardized**.
 ### Example Question (Mixed Concepts)
 
 > Let $X, Y$ be RVs such that:
-> - $\operatorname{Var}(X) = 4$, $\operatorname{Var}(Y) = 9$
-> - $\operatorname{Cov}(X, Y) = 6$
+> - $\operatorname*{Var}(X) = 4$, $\operatorname*{Var}(Y) = 9$
+> - $\operatorname*{Cov}(X, Y) = 6$
 
 #### Find:
 
-- $\operatorname{Var}(X + Y)$
+- $\operatorname*{Var}(X + Y)$
 - $\rho_{X,Y}$
 
 ---
@@ -880,11 +880,11 @@ This makes correlation very powerful: **unit-less and standardized**.
 **Solution:**
 
 $$
-\operatorname{Var}(X+Y) = 4 + 9 + 2(6) = 25
+\operatorname*{Var}(X+Y) = 4 + 9 + 2(6) = 25
 $$
 
 $$
-\rho = \frac{\operatorname{Cov}(X,Y)}{\sigma_X \cdot \sigma_Y} = \frac{6}{\sqrt{4} \cdot \sqrt{9}} = \frac{6}{2 \cdot 3} = 1
+\rho = \frac{\operatorname*{Cov}(X,Y)}{\sigma_X \cdot \sigma_Y} = \frac{6}{\sqrt{4} \cdot \sqrt{9}} = \frac{6}{2 \cdot 3} = 1
 $$
 
 Perfectly positively correlated!
@@ -895,12 +895,12 @@ Perfectly positively correlated!
 
 | Concept | Property | Formula |
 |--------|----------|---------|
-| Variance | Scaling | $\operatorname{Var}(aX) = a^2 \cdot \operatorname{Var}(X)$ |
-| Covariance | Symmetry | $\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)$ |
-| Covariance | Linear Combination | $\operatorname{Cov}(aX+b, cY+d) = ac \cdot \operatorname{Cov}(X, Y)$ |
-| Correlation | Standardized | $\rho = \frac{\operatorname{Cov}(X, Y)}{\sigma_X \sigma_Y}$ |
+| Variance | Scaling | $\operatorname*{Var}(aX) = a^2 \cdot \operatorname*{Var}(X)$ |
+| Covariance | Symmetry | $\operatorname*{Cov}(X,Y) = \operatorname*{Cov}(Y,X)$ |
+| Covariance | Linear Combination | $\operatorname*{Cov}(aX+b, cY+d) = ac \cdot \operatorname*{Cov}(X, Y)$ |
+| Correlation | Standardized | $\rho = \frac{\operatorname*{Cov}(X, Y)}{\sigma_X \sigma_Y}$ |
 | Correlation | Range | $-1 \le \rho \le 1$ |
-| Variance of Sum | General | $\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y)$ |
+| Variance of Sum | General | $\operatorname*{Var}(X+Y) = \operatorname*{Var}(X) + \operatorname*{Var}(Y) + 2\operatorname*{Cov}(X, Y)$ |
 
 ---
 
