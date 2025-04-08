@@ -1,3 +1,4 @@
+\usepackage{amsmath}
 # Probability Notes – Sessional II
 
 ---
