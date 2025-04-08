@@ -2884,3 +2884,147 @@ If $ X \sim \text{Geometric}(0.25) $:
 
 - $ \mathbb{E}[X] = \frac{1}{0.25} = 4 $
 - $ \text{Var}(X) = \frac{1 - 0.25}{0.25^2} = \frac{0.75}{0.0625} = 12 $
+
+## 📌 3.7 Poisson Distribution
+
+### 🔹 Intuition
+
+The **Poisson Distribution** models the number of times an event occurs in a **fixed interval of time or space**, **if** these events happen:
+- **Independently**
+- At a **constant average rate**
+- **One at a time**
+
+> Think: “How many customers arrive at a bank in an hour?”  
+> “How many calls are received in 10 minutes?”  
+> “How many typos appear on one page?”
+
+---
+
+### 🔸 3.7.1 PMF (Probability Mass Function)
+
+Let $ X \sim \text{Poisson}(\lambda) $, where $ \lambda $ is the **average rate** of occurrences in an interval.
+
+$$
+P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, 2, \dots
+$$
+
+Where:
+- $ \lambda > 0 $: average number of occurrences per interval
+- $ e \approx 2.718 $: Euler’s number
+
+---
+
+### 🔸 3.7.2 MGF (Moment Generating Function)
+
+$$
+M_X(t) = \exp\left( \lambda (e^t - 1) \right)
+$$
+
+---
+
+### 🔸 3.7.3 Expected Value
+
+$$
+\mathbb{E}[X] = \lambda
+$$
+
+---
+
+### 🔸 3.7.4 Variance
+
+$$
+\text{Var}(X) = \lambda
+$$
+
+> The **mean and variance are equal**, which is a key Poisson property.
+
+---
+
+### 🔸 3.7.5 Skewness
+
+$$
+\text{Skewness} = \frac{1}{\sqrt{\lambda}}
+$$
+
+---
+
+### 🔸 3.7.6 Kurtosis
+
+$$
+\text{Kurtosis} = \frac{1}{\lambda}
+$$
+
+---
+
+## 🔁 Relationship with Binomial Distribution
+
+The Poisson is often seen as a **limiting case of the Binomial distribution** when:
+
+$$
+n \to \infty,\ p \to 0,\ \text{and } np = \lambda
+$$
+
+---
+
+## 🧠 Trick Question Patterns
+
+---
+
+### Q1: Direct PMF
+
+> If a call center receives 6 calls per hour on average, what is the probability that 4 calls are received in one hour?
+
+$$
+P(X = 4) = \frac{e^{-6} \cdot 6^4}{4!} = \frac{e^{-6} \cdot 1296}{24} \approx 0.1339
+$$
+
+---
+
+### Q2: At Least / At Most
+
+> What’s the probability of **at most 2** accidents in a day if $ \lambda = 3 $?
+
+$$
+P(X \leq 2) = P(0) + P(1) + P(2) = \sum_{x=0}^{2} \frac{e^{-3} \cdot 3^x}{x!}
+$$
+
+You’ll often be asked to calculate or approximate CDF-like expressions manually or using tables.
+
+---
+
+### Q3: Interval Conversion
+
+> If 5 calls arrive per hour, what is the probability of 2 calls in **24 minutes**?
+
+- 24 minutes = $ \frac{2}{5} $ of an hour
+- New $ \lambda = 5 \cdot \frac{2}{5} = 2 $
+
+Then apply PMF:
+
+$$
+P(X = 2) = \frac{e^{-2} \cdot 2^2}{2!} = \frac{e^{-2} \cdot 4}{2} = 2e^{-2}
+$$
+
+---
+
+### Q4: Mean = Variance Trick
+
+> If the variance of a discrete distribution is equal to its mean, what could be the distribution?
+
+✅ **Poisson**!
+
+---
+
+### Q5: Additivity Property
+
+If $ X_1 \sim \text{Poisson}(\lambda_1) $ and $ X_2 \sim \text{Poisson}(\lambda_2) $, then:
+
+$$
+X_1 + X_2 \sim \text{Poisson}(\lambda_1 + \lambda_2)
+$$
+
+Only valid if $ X_1 $ and $ X_2 $ are **independent**.
+
+---
+
+That completes Part 3 and your entire **Sessional II Syllabus** 🎯
