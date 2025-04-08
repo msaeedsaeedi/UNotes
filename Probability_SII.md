@@ -2762,3 +2762,125 @@ P(X = x) = (1 - p)^{x - 1} p
 $$
 
 We’ll explore this next 👇
+
+
+## 📌 3.6 Geometric Distribution
+
+### 🔹 Intuition
+
+The **Geometric Distribution** models the number of **Bernoulli trials** required **until the first success** occurs.
+
+> Think: “How many coin tosses do I need until I get the first head?”
+
+---
+
+### 🔸 3.6.1 PMF (Probability Mass Function)
+
+Let $ X $ be the trial on which the **first success** occurs.
+
+$$
+P(X = x) = (1 - p)^{x - 1} p, \quad x = 1, 2, 3, \dots
+$$
+
+Where:
+- $ p $: probability of success in a single trial
+- $ (1 - p) $: failure
+- $ X \sim \text{Geometric}(p) $
+
+---
+
+### 🔸 3.6.2 MGF (Moment Generating Function)
+
+$$
+M_X(t) = \frac{p e^t}{1 - (1 - p) e^t}, \quad \text{for } t < -\ln(1 - p)
+$$
+
+---
+
+### 🔸 3.6.3 Expected Value
+
+$$
+\mathbb{E}[X] = \frac{1}{p}
+$$
+
+This means **on average**, you need $ \frac{1}{p} $ trials to get the first success.
+
+---
+
+### 🔸 3.6.4 Variance
+
+$$
+\text{Var}(X) = \frac{1 - p}{p^2}
+$$
+
+---
+
+### 🔸 3.6.5 Skewness
+
+$$
+\text{Skewness} = \frac{2 - p}{\sqrt{1 - p}}
+$$
+
+---
+
+### 🔸 3.6.6 Kurtosis
+
+$$
+\text{Kurtosis} = 6 + \frac{p^2}{1 - p}
+$$
+
+---
+
+## 🔄 Relationship to Negative Binomial
+
+The **Geometric Distribution** is a **special case of the Negative Binomial**, when $ r = 1 $.
+
+- Negative Binomial models trials to get **r successes**
+- Geometric is **trials to get the 1st success**
+
+---
+
+## 💡 Trick Question Patterns
+
+---
+
+### Q1: First Success on x-th Trial
+
+> A shooter hits a target with $ p = 0.3 $. What’s the probability the **first hit is on the 4th try**?
+
+$$
+P(X = 4) = (1 - 0.3)^3 \cdot 0.3 = (0.7)^3 \cdot 0.3 = 0.1029
+$$
+
+---
+
+### Q2: At Most / At Least Style
+
+> What’s the probability the first success is **within 3 tries**?
+
+This is a **CDF** question:
+
+$$
+P(X \leq 3) = 1 - (1 - p)^3 = 1 - (0.7)^3 = 0.657
+$$
+
+---
+
+### Q3: Memoryless Property
+
+The Geometric Distribution is the **only discrete memoryless distribution**.
+
+$$
+P(X > m + n \mid X > m) = P(X > n)
+$$
+
+> Future doesn’t depend on the past! It resets at every failure.
+
+---
+
+### Q4: Expected Value / Variance Question
+
+If $ X \sim \text{Geometric}(0.25) $:
+
+- $ \mathbb{E}[X] = \frac{1}{0.25} = 4 $
+- $ \text{Var}(X) = \frac{1 - 0.25}{0.25^2} = \frac{0.75}{0.0625} = 12 $
