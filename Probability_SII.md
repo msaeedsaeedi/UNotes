@@ -2511,3 +2511,123 @@ This is a **multi-variable MGF**, so moments are found using partial derivatives
 3. **MGF application:**
 
 > Use $ \left(\sum p_i e^{t_i}\right)^n $ to extract mixed moments like $ \mathbb{E}[X_1 X_2] $ by partial derivatives.
+
+## 📌 3.4 Hypergeometric Distribution
+
+### 🔹 Intuition
+
+The Hypergeometric Distribution models the number of **successes** in a sample of size $ n $ drawn **without replacement** from a finite population of size $ N $ that contains:
+
+- $ K $ successes  
+- $ N - K $ failures
+
+> **Think of drawing cards from a deck or selecting defective items from a batch — without putting them back.**
+
+---
+
+### 🔸 3.4.1 PMF (Probability Mass Function)
+
+If $ X $ is the number of successes in $ n $ draws, then:
+
+$$
+P(X = x) = \frac{\binom{K}{x} \binom{N - K}{n - x}}{\binom{N}{n}}
+$$
+
+Where:
+
+- $ 0 \le x \le \min(K, n) $
+- $ X \sim \text{Hypergeometric}(N, K, n) $
+
+---
+
+### 🔸 3.4.2 Expected Value
+
+$$
+\mathbb{E}[X] = n \cdot \frac{K}{N}
+$$
+
+> Same intuition as binomial: sample size × success proportion in population.
+
+---
+
+### 🔸 3.4.3 Variance
+
+$$
+\text{Var}(X) = n \cdot \frac{K}{N} \cdot \frac{N - K}{N} \cdot \frac{N - n}{N - 1}
+$$
+
+- The **extra term** $ \frac{N - n}{N - 1} $ is the **finite population correction** due to *no replacement*.
+
+---
+
+### 🔸 3.4.4 MGF (Moment Generating Function)
+
+There’s **no simple closed-form MGF** for Hypergeometric.  
+Instead, moments are usually derived using direct expectation techniques.
+
+---
+
+### 🔸 3.4.5 Skewness
+
+$$
+\text{Skewness} = \frac{(N - 2K)\sqrt{N - 1}(N - 2n)}{\sqrt{nK(N - K)(N - n)}(N - 2)}
+$$
+
+> Often omitted in simpler settings, but relevant for deep theoretical analysis.
+
+---
+
+### 🔸 3.4.6 Kurtosis
+
+No simple form, but it exists. Generally omitted unless explicitly asked.
+
+---
+
+### 🧠 Trick Question Patterns
+
+---
+
+#### 💡 Q1: Biased Drawing
+
+> A batch of 20 bulbs contains 6 defective ones. If 5 bulbs are randomly selected without replacement, what's the probability that exactly 2 are defective?
+
+- $ N = 20, K = 6, n = 5, x = 2 $
+
+$$
+P(X = 2) = \frac{\binom{6}{2} \binom{14}{3}}{\binom{20}{5}}
+$$
+
+---
+
+#### 💡 Q2: Comparing with Binomial
+
+> If the same question allowed **replacement**, then use:
+$$
+X \sim \text{Binomial}(5, \frac{6}{20})
+$$
+
+But in **Hypergeometric**, we account for decreasing probabilities as items are removed.
+
+---
+
+#### 💡 Q3: Conceptual Twist
+
+> You draw 3 cards from a deck of 52. What’s the probability that **all are red**?
+
+- $ N = 52, K = 26 $ (red cards), $ n = 3, x = 3 $
+
+$$
+P(X = 3) = \frac{\binom{26}{3} \binom{26}{0}}{\binom{52}{3}} = \frac{\binom{26}{3}}{\binom{52}{3}}
+$$
+
+---
+
+#### 💡 Q4: Expectation-based
+
+> If a jar has 15 white and 10 black balls, and you randomly draw 6 without replacement, what’s the expected number of white balls?
+
+- $ N = 25, K = 15, n = 6 $
+
+$$
+\mathbb{E}[X] = 6 \cdot \frac{15}{25} = 3.6
+$$
