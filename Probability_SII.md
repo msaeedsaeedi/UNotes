@@ -4,9 +4,9 @@
 
 ## Part 1: Discrete and Continuous Random Variables
 
-### 🔹 **1.1 Random Variables (RVs)**
+### **1.1 Random Variables (RVs)**
 
-#### 🔸 What is a Random Variable?
+#### What is a Random Variable?
 
 A **Random Variable (RV)** is a variable that takes on numerical values based on the outcome of a random experiment.
 
@@ -19,7 +19,7 @@ There are **two types**:
 
 ---
 
-#### 🔹 Examples
+#### Examples
 
 ##### Discrete RV:
 - Tossing a coin 3 times → Let $ X $ = number of heads.
@@ -31,7 +31,7 @@ There are **two types**:
 
 ---
 
-#### 🔸 Notation
+#### Notation
 
 - Random Variable: usually written in **uppercase** (e.g., $ X, Y $)
 - Realized value: written in **lowercase** (e.g., $ x, y $)
@@ -40,7 +40,7 @@ There are **two types**:
 
 ---
 
-### 🔹 Key Differences (Discrete vs Continuous)
+### Key Differences (Discrete vs Continuous)
 
 | Feature                 | Discrete RV                         | Continuous RV                          |
 |-------------------------|-------------------------------------|----------------------------------------|
@@ -52,7 +52,7 @@ There are **two types**:
 
 ---
 
-#### 📌 Important Realizations:
+#### Important Realizations:
 
 1. **Discrete RV**: We assign probability to each value.
    - $ P(X = x) $ is meaningful and non-zero.
@@ -61,7 +61,7 @@ There are **two types**:
 
 ---
 
-#### 🎯 Quick Practice
+#### Quick Practice
 
 **Q1:** Identify if the following RVs are discrete or continuous:
 
@@ -70,7 +70,7 @@ b. The temperature at noon in Islamabad
 c. The time it takes to solve a math problem  
 d. The number of students in a class
 
-👉 **Answers**:
+**Answers**:
 - a: Discrete  
 - b: Continuous  
 - c: Continuous  
@@ -78,9 +78,9 @@ d. The number of students in a class
 
 ---
 
-### 🔹 **1.2 Probability Mass Function (PMF)** – For Discrete Random Variables
+### **1.2 Probability Mass Function (PMF)** – For Discrete Random Variables
 
-#### 🔸 Definition:
+#### Definition:
 
 A **Probability Mass Function (PMF)** gives the probability that a **discrete** random variable is equal to a particular value.
 
@@ -94,7 +94,7 @@ It must satisfy:
 
 ---
 
-#### 🧠 Example 1: Tossing a fair coin twice
+#### Example 1: Tossing a fair coin twice
 
 Let $ X $ be the number of heads.
 
@@ -110,11 +110,11 @@ $$
 \sum p(x) = \frac{1}{4} + \frac{2}{4} + \frac{1}{4} = 1
 $$
 
-✅ This is a valid PMF.
+This is a valid PMF.
 
 ---
 
-#### 🧠 Example 2: Rolling a fair die
+#### Example 2: Rolling a fair die
 
 Let $ X $ = outcome of the die.
 
@@ -123,9 +123,9 @@ Let $ X $ = outcome of the die.
 
 ---
 
-### 🔹 **1.2 Probability Density Function (PDF)** – For Continuous Random Variables
+### **1.2 Probability Density Function (PDF)** – For Continuous Random Variables
 
-#### 🔸 Definition:
+#### Definition:
 
 A **Probability Density Function (PDF)** is a function that describes the **relative likelihood** of a **continuous** random variable to take on a value within a certain interval.
 
@@ -133,7 +133,7 @@ $$
 f(x) \ge 0 \quad \text{and} \quad \int_{-\infty}^{\infty} f(x)\,dx = 1
 $$
 
-👉 You **cannot** say $ P(X = x) $. Instead:
+You **cannot** say $ P(X = x) $. Instead:
 
 $$
 P(a \le X \le b) = \int_a^b f(x) \, dx
@@ -141,7 +141,7 @@ $$
 
 ---
 
-#### 🧠 Example 1: Uniform Distribution over [0, 1]
+#### Example 1: Uniform Distribution over [0, 1]
 
 $$
 f(x) = \begin{cases}
@@ -162,7 +162,7 @@ $$
 
 ---
 
-#### 🧠 Example 2: Exponential Distribution (with $ \lambda = 1 $)
+#### Example 2: Exponential Distribution (with $ \lambda = 1 $)
 
 $$
 f(x) = e^{-x}, \quad x \ge 0
@@ -177,7 +177,7 @@ This is a valid PDF.
 
 ---
 
-### 📊 PMF vs PDF – Summary Table
+### PMF vs PDF – Summary Table
 
 | Feature               | PMF (Discrete)            | PDF (Continuous)                        |
 |----------------------|---------------------------|-----------------------------------------|
@@ -188,24 +188,24 @@ This is a valid PDF.
 
 ---
 
-### 🎯 Quick Check:
+### Quick Check:
 
 1. Is $ P(X = 1.5) $ meaningful for a **continuous** random variable?  
 2. Can PMF ever be negative?  
 3. What condition must a function satisfy to be a valid PDF?
 
-👉 **Answers**:
-1. ❌ No, $ P(X = 1.5) = 0 $ for continuous RVs  
-2. ❌ No, PMF $ \ge 0 $  
-3. ✅ $ f(x) \ge 0 $, and total area under curve = 1
+**Answers**:
+1. No, $ P(X = 1.5) = 0 $ for continuous RVs  
+2. No, PMF $ \ge 0 $  
+3. $ f(x) \ge 0 $, and total area under curve = 1
 
 ---
 
 ## Part 2: Joint Distributions of Discrete and Continuous Random Variables
 
-### 🔹 **2.1 Joint Distributions**
+### **2.1 Joint Distributions**
 
-#### 🔸 Discrete Case
+#### Discrete Case
 
 If $ X $ and $ Y $ are discrete random variables, their **joint PMF** is:
 
@@ -219,7 +219,7 @@ It satisfies:
 
 ---
 
-#### 🔸 Continuous Case
+#### Continuous Case
 
 If $ X $ and $ Y $ are continuous random variables, then their **joint PDF** is a function $ f(x, y) $ such that:
 
@@ -234,7 +234,7 @@ It must satisfy:
 
 ---
 
-## 🔹 **2.2 Marginal Distributions**
+## **2.2 Marginal Distributions**
 
 **Marginal distribution** gives us the probability distribution of a single random variable *ignoring* the other one.
 
@@ -243,7 +243,7 @@ Basically:
 
 ---
 
-### 🔷 2.2.1 Marginal Distribution (Discrete Case)
+### 2.2.1 Marginal Distribution (Discrete Case)
 
 Given the **joint PMF** $ P(X = x_i, Y = y_j) $, the **marginal PMF** of $ X $ is:
 
@@ -259,7 +259,7 @@ $$
 
 ---
 
-### 🔸 Example (From a Joint PMF Table)
+### Example (From a Joint PMF Table)
 
 | $ P(X = x, Y = y) $ | $ Y = 0 $ | $ Y = 1 $ | Marginal $ P_X(x) $ |
 |------------------------|------------|------------|------------------------|
@@ -268,12 +268,12 @@ $$
 | Marginal $ P_Y(y) $ | 0.3        | 0.7        |                        |
 
 $$
-\text{Check: } \sum P_X(x) = 0.5 + 0.5 = 1 ✅,\quad \sum P_Y(y) = 0.3 + 0.7 = 1 ✅
+\text{Check: } \sum P_X(x) = 0.5 + 0.5 = 1 ,\quad \sum P_Y(y) = 0.3 + 0.7 = 1 
 $$
 
 ---
 
-### 🔷 2.2.2 Marginal Distribution (Continuous Case)
+### 2.2.2 Marginal Distribution (Continuous Case)
 
 Given a **joint PDF** $ f(x, y) $, the **marginal PDF** of $ X $ is:
 
@@ -289,7 +289,7 @@ $$
 
 ---
 
-### 🔸 Example
+### Example
 
 Let:
 $$
@@ -318,13 +318,13 @@ $$
 
 ---
 
-## 🔹 **2.3 Conditional Distributions**
+## **2.3 Conditional Distributions**
 
 Conditional distributions tell us how the probability of one variable behaves *under the condition* that we know the value of the other variable.
 
 ---
 
-### 🔷 2.3.1 Discrete Case — Conditional PMF
+### 2.3.1 Discrete Case — Conditional PMF
 
 Let $ X $ and $ Y $ be discrete random variables with a known **joint PMF** $ P(X = x, Y = y) $.
 
@@ -341,7 +341,7 @@ $$
 
 ---
 
-### 🔸 Example
+### Example
 
 Using the same table from earlier:
 
@@ -355,11 +355,11 @@ Now:
 - $ P(X = 1 \mid Y = 1) = \frac{0.3}{0.7} = \frac{3}{7} $
 - $ P(Y = 0 \mid X = 2) = \frac{0.1}{0.5} = \frac{1}{5} $
 
-✅ Always check the denominator is not zero.
+Always check the denominator is not zero.
 
 ---
 
-### 🔷 2.3.2 Continuous Case — Conditional PDF
+### 2.3.2 Continuous Case — Conditional PDF
 
 Let $ f(x, y) $ be a joint PDF. Then:
 
@@ -375,7 +375,7 @@ $$
 
 ---
 
-### 🔸 Example
+### Example
 
 Given:
 
@@ -398,11 +398,11 @@ f_{Y \mid X}(y \mid x) = \frac{4xy}{2x} = 2y
 \quad \text{(as long as } x > 0\text{)}
 $$
 
-💡 Notice: The conditional PDFs are the same as marginals in this case — this hints at independence (we’ll get to that next!).
+Notice: The conditional PDFs are the same as marginals in this case — this hints at independence (we’ll get to that next!).
 
 ---
 
-## 🔹 **2.4 Independence of Random Variables**
+## **2.4 Independence of Random Variables**
 
 Two random variables are **independent** if *knowing the value of one gives no information about the other*.  
 In other words:  
@@ -410,11 +410,11 @@ In other words:
 
 ---
 
-### 🔷 2.4.1 Independence — Discrete Case
+### 2.4.1 Independence — Discrete Case
 
 Let $ X $ and $ Y $ be discrete random variables.
 
-#### 👉 Definition:
+#### Definition:
 
 $ X $ and $ Y $ are **independent** if and only if:
 
@@ -426,7 +426,7 @@ That is, the **joint PMF** equals the **product of the marginals**.
 
 ---
 
-### 🔸 Example:
+### Example:
 
 From earlier:
 
@@ -440,15 +440,15 @@ Check:
 $ P(X = 1, Y = 0) = 0.2 $  
 $ P_X(1) \cdot P_Y(0) = 0.5 \cdot 0.3 = 0.15 \ne 0.2 $
 
-❌ So, **not independent**
+So, **not independent**
 
 ---
 
-### 🔷 2.4.2 Independence — Continuous Case
+### 2.4.2 Independence — Continuous Case
 
 Let $ X $ and $ Y $ be continuous random variables.
 
-#### 👉 Definition:
+#### Definition:
 
 $ X $ and $ Y $ are **independent** if and only if:
 
@@ -460,7 +460,7 @@ So again, the **joint PDF** must be the **product of marginals**.
 
 ---
 
-### 🔸 Example:
+### Example:
 
 Let:
 $$
@@ -476,15 +476,15 @@ $$
 f(x, y) = 4xy = 2x \cdot 2y = f_X(x) \cdot f_Y(y)
 $$
 
-✅ So, **independent**
+So, **independent**
 
 ---
 
-## 🔹 **2.5 Variance and Covariance**
+## **2.5 Variance and Covariance**
 
 ---
 
-### 🔷 2.5.1 Variance Recap (for a Single RV)
+### 2.5.1 Variance Recap (for a Single RV)
 
 For a single random variable $ X $, we define:
 
@@ -496,7 +496,7 @@ It tells us **how much the values of X deviate from the mean**.
 
 ---
 
-### 🔷 2.5.2 Covariance — Measuring Linear Relationship
+### 2.5.2 Covariance — Measuring Linear Relationship
 
 Covariance tells us **how two random variables vary together**.
 
@@ -512,7 +512,7 @@ $$
 
 ---
 
-#### 🟩 Interpretation:
+#### Interpretation:
 
 - **Positive Covariance**: When $ X $ increases, $ Y $ tends to increase.
 - **Negative Covariance**: When $ X $ increases, $ Y $ tends to decrease.
@@ -522,7 +522,7 @@ $$
 
 ---
 
-#### 🔸 Example (Discrete Case)
+#### Example (Discrete Case)
 
 | $ (X, Y) $ | $ P(X, Y) $ |
 |-------------|---------------|
@@ -541,11 +541,11 @@ $$
 \operatorname{Cov}(X, Y) = E[XY] - E[X]E[Y] = 4 - (2)(2) = 0
 $$
 
-✅ So X and Y are **uncorrelated**.
+So X and Y are **uncorrelated**.
 
 ---
 
-#### 🔸 Example (Continuous Case)
+#### Example (Continuous Case)
 
 Let:
 $$
@@ -573,7 +573,7 @@ Again, **uncorrelated**.
 
 ---
 
-### 🔷 2.5.3 Properties of Covariance
+### 2.5.3 Properties of Covariance
 
 1. **Symmetry**:  
    $$
@@ -591,21 +591,21 @@ Again, **uncorrelated**.
 
 ---
 
-### 🔷 2.5.4 Variance of a Sum
+### 2.5.4 Variance of a Sum
 
 $$
 \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2 \cdot \operatorname{Cov}(X, Y)
 $$
 
-⚠️ Use this when computing variance of totals (e.g., total score of 2 subjects).
+Use this when computing variance of totals (e.g., total score of 2 subjects).
 
 ---
 
-## 🔹 **2.6 Correlation Coefficient**
+## **2.6 Correlation Coefficient**
 
 ---
 
-### 🔷 2.6.1 What is the Correlation Coefficient?
+### 2.6.1 What is the Correlation Coefficient?
 
 The **correlation coefficient**, denoted by $ \rho_{X,Y} $ (rho), **standardizes covariance**.
 
@@ -621,7 +621,7 @@ This tells us **how strongly X and Y are linearly related**, and the value is **
 
 ---
 
-### 🔷 2.6.2 Interpretation
+### 2.6.2 Interpretation
 
 | Value of $ \rho $ | Strength of Relationship |
 |---------------------|--------------------------|
@@ -635,7 +635,7 @@ This tells us **how strongly X and Y are linearly related**, and the value is **
 
 ---
 
-### 🔸 Example 1 (Discrete)
+### Example 1 (Discrete)
 
 From previous example:
 
@@ -670,11 +670,11 @@ $$
 \rho_{X,Y} = \frac{0}{1 \cdot 1} = 0
 $$
 
-✅ No linear correlation.
+No linear correlation.
 
 ---
 
-### 🔸 Example 2 (Simple Correlated Pair)
+### Example 2 (Simple Correlated Pair)
 
 Let:
 - $ X \in \{1, 2, 3\} $, with $ P(X = x) = \frac{1}{3} $
@@ -712,11 +712,11 @@ $$
 \rho_{X,Y} = \frac{\frac{4}{3}}{\sqrt{\frac{2}{3}} \cdot \sqrt{\frac{8}{3}}} = \frac{4}{\sqrt{2 \cdot 8}} = \frac{4}{\sqrt{16}} = 1
 $$
 
-✅ Perfect linear correlation.
+Perfect linear correlation.
 
 ---
 
-### 🔷 2.6.3 Properties of Correlation
+### 2.6.3 Properties of Correlation
 
 - $ -1 \le \rho_{X,Y} \le 1 $
 - $ \rho_{X,Y} = \rho_{Y,X} $
@@ -725,17 +725,17 @@ $$
 
 ---
 
-## 🔹 **2.7 Properties of Covariance, Variance, and Correlation**
+## **2.7 Properties of Covariance, Variance, and Correlation**
 
 We’ll go through them category-wise so it’s clean and easy to revise.
 
 ---
 
-### 🔷 2.7.1 **Variance Properties**
+### 2.7.1 **Variance Properties**
 
 Let $ X $ be a random variable and $ a, b $ be constants:
 
-#### 🔹 1. **Variance of a Constant:**
+#### 1. **Variance of a Constant:**
 $$
 \operatorname{Var}(c) = 0
 $$
@@ -744,7 +744,7 @@ A constant doesn’t vary, so its variance is 0.
 
 ---
 
-#### 🔹 2. **Scaling:**
+#### 2. **Scaling:**
 $$
 \operatorname{Var}(aX) = a^2 \cdot \operatorname{Var}(X)
 $$
@@ -753,7 +753,7 @@ Multiplying a random variable scales its variance **quadratically** (not linearl
 
 ---
 
-#### 🔹 3. **Shift Doesn’t Affect Variance:**
+#### 3. **Shift Doesn’t Affect Variance:**
 $$
 \operatorname{Var}(X + b) = \operatorname{Var}(X)
 $$
@@ -762,14 +762,14 @@ Adding a constant only shifts the values, doesn’t change the spread.
 
 ---
 
-#### 🔹 4. **Variance of a Sum (General Case):**
+#### 4. **Variance of a Sum (General Case):**
 $$
 \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X, Y)
 $$
 
 ---
 
-#### 🔹 5. **If X and Y are Independent:**
+#### 5. **If X and Y are Independent:**
 $$
 \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)
 $$
@@ -781,18 +781,18 @@ $$
 
 ---
 
-### 🔷 2.7.2 **Covariance Properties**
+### 2.7.2 **Covariance Properties**
 
 For constants $ a, b, c, d $, and random variables $ X, Y $:
 
-#### 🔹 1. **Covariance is Symmetric:**
+#### 1. **Covariance is Symmetric:**
 $$
 \operatorname{Cov}(X, Y) = \operatorname{Cov}(Y, X)
 $$
 
 ---
 
-#### 🔹 2. **Covariance of Independent Variables:**
+#### 2. **Covariance of Independent Variables:**
 $$
 X \perp Y \Rightarrow \operatorname{Cov}(X, Y) = 0
 $$
@@ -801,19 +801,19 @@ But **not the reverse!**
 
 ---
 
-#### 🔹 3. **Cov(X, X) = Var(X)**  
+#### 3. **Cov(X, X) = Var(X)**  
 Self-covariance is variance.
 
 ---
 
-#### 🔹 4. **Linearity (Scalar Multiplication):**
+#### 4. **Linearity (Scalar Multiplication):**
 $$
 \operatorname{Cov}(aX, bY) = ab \cdot \operatorname{Cov}(X, Y)
 $$
 
 ---
 
-#### 🔹 5. **Linearity (Addition/Subtraction):**
+#### 5. **Linearity (Addition/Subtraction):**
 $$
 \operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y, Z)
 $$
@@ -822,7 +822,7 @@ In general, Cov is **linear in each argument**.
 
 ---
 
-#### 🔹 6. **Covariance with Constant:**
+#### 6. **Covariance with Constant:**
 $$
 \operatorname{Cov}(X, c) = 0
 $$
@@ -831,16 +831,16 @@ Because a constant has no variation.
 
 ---
 
-### 🔷 2.7.3 **Correlation Properties**
+### 2.7.3 **Correlation Properties**
 
 Let $ \rho = \text{Corr}(X, Y) $:
 
-#### 🔹 1. **Bounds:**
+#### 1. **Bounds:**
 $$
 -1 \leq \rho \leq 1
 $$
 
-#### 🔹 2. **Perfect Correlation:**
+#### 2. **Perfect Correlation:**
 - $ \rho = 1 $: $ Y = aX + b $, with $ a > 0 $
 - $ \rho = -1 $: $ Y = aX + b $, with $ a < 0 $
 
@@ -848,12 +848,12 @@ Linear relationships only.
 
 ---
 
-#### 🔹 3. **Independence Implies Zero Correlation**  
+#### 3. **Independence Implies Zero Correlation**  
 But **zero correlation ≠ independence** (unless joint distribution is normal or special).
 
 ---
 
-#### 🔹 4. **Invariant to Shifts and Scales:**
+#### 4. **Invariant to Shifts and Scales:**
 
 $$
 \rho_{X,Y} = \rho_{aX+b, cY+d} \quad \text{(if } a, c > 0 \text{)}
@@ -863,7 +863,7 @@ This makes correlation very powerful: **unit-less and standardized**.
 
 ---
 
-### 📦 Example Question (Mixed Concepts)
+### Example Question (Mixed Concepts)
 
 > Let $ X, Y $ be RVs such that:
 > - $ \operatorname{Var}(X) = 4 $, $ \operatorname{Var}(Y) = 9 $
@@ -886,11 +886,11 @@ $$
 \rho = \frac{\operatorname{Cov}(X,Y)}{\sigma_X \cdot \sigma_Y} = \frac{6}{\sqrt{4} \cdot \sqrt{9}} = \frac{6}{2 \cdot 3} = 1
 $$
 
-✅ Perfectly positively correlated!
+Perfectly positively correlated!
 
 ---
 
-### ✍️ Summary Table
+### Summary Table
 
 | Concept | Property | Formula |
 |--------|----------|---------|
@@ -903,13 +903,13 @@ $$
 
 ---
 
-## 🔹 **2.8 Chebyshev’s Inequality**
+## **2.8 Chebyshev’s Inequality**
 
 Chebyshev's inequality gives us a **lower bound** for the probability that a random variable deviates from its mean.
 
 ---
 
-### 🔷 2.8.1 **What is Chebyshev’s Inequality?**
+### 2.8.1 **What is Chebyshev’s Inequality?**
 
 Chebyshev’s inequality states that for any random variable $ X $ with mean $ \mu $ and variance $ \sigma^2 $:
 
@@ -926,7 +926,7 @@ In words: **No more than $ \frac{1}{k^2} $ of the distribution lies more than $ 
 
 ---
 
-### 🔷 2.8.2 **Interpretation**
+### 2.8.2 **Interpretation**
 
 - The inequality gives us a **worst-case bound** on the probability that a value falls a certain distance away from the mean.
 - It’s **non-parametric**, meaning it works for any probability distribution (even those that are not normal).
@@ -934,9 +934,9 @@ In words: **No more than $ \frac{1}{k^2} $ of the distribution lies more than $ 
 
 ---
 
-### 🔷 2.8.3 **Examples**
+### 2.8.3 **Examples**
 
-#### 🔸 Example 1: Basic Application
+#### Example 1: Basic Application
 
 Let’s say we have a random variable $ X $ with:
 - Mean $ \mu = 5 $
@@ -953,7 +953,7 @@ So, the probability that $ X $ deviates more than 3 units from the mean is **at 
 
 ---
 
-#### 🔸 Example 2: Interpretation for Larger Deviations
+#### Example 2: Interpretation for Larger Deviations
 
 Now, let’s see what happens when we look for a larger deviation, say $ 5 $ units.
 
@@ -968,7 +968,7 @@ So, the probability that $ X $ deviates more than 5 units from the mean is **at 
 
 ---
 
-### 🔷 2.8.4 **Key Takeaways**
+### 2.8.4 **Key Takeaways**
 
 - Chebyshev’s inequality is very general and can be applied to any distribution, whether or not it’s normal.
 - The inequality provides an **upper bound**, not the exact probability.
@@ -977,7 +977,7 @@ So, the probability that $ X $ deviates more than 5 units from the mean is **at 
 
 ---
 
-### 🔷 Summary of Chebyshev's Inequality
+### Summary of Chebyshev's Inequality
 
 For a random variable $ X $ with mean $ \mu $ and variance $ \sigma^2 $, Chebyshev's inequality states:
 
@@ -991,7 +991,7 @@ $$
 
 ---
 
-### 📦 Example Question (Application)
+### Example Question (Application)
 
 > Given a distribution with $ \mu = 10 $ and $ \sigma = 4 $, use Chebyshev’s inequality to find the probability that the random variable lies within 6 units of the mean.
 
@@ -1013,9 +1013,9 @@ Thus, the probability that $ X $ deviates by **more than 6 units** from the mean
 
 ## Part 3: Selected Discrete Distributions
 
-### 🔹 **3.1 Bernoulli Distribution**
+### **3.1 Bernoulli Distribution**
 
-#### 🔸 PMF
+#### PMF
 
 $$
 P(X = x) = p^x (1 - p)^{1 - x}, \quad \text{for } x \in \{0, 1\}
@@ -1023,7 +1023,7 @@ $$
 
 ---
 
-### 🔸 3.1.2 Mean (Expected Value)
+### 3.1.2 Mean (Expected Value)
 
 $$
 \mathbb{E}[X] = 0 \cdot (1 - p) + 1 \cdot p = p
@@ -1033,7 +1033,7 @@ So, the **mean of a Bernoulli random variable is $ p $**.
 
 ---
 
-### 🔸 3.1.3 Variance
+### 3.1.3 Variance
 
 $$
 \text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
@@ -1049,7 +1049,7 @@ So, the **variance is $ p(1 - p) $**.
 
 ---
 
-### 🔸 3.1.4 Moment Generating Function (MGF)
+### 3.1.4 Moment Generating Function (MGF)
 
 The MGF of a discrete random variable is:
 
@@ -1059,7 +1059,7 @@ $$
 
 ---
 
-### 🔸 3.1.5 Skewness
+### 3.1.5 Skewness
 
 $$
 \text{Skewness} = \frac{1 - 2p}{\sqrt{p(1 - p)}}
@@ -1071,7 +1071,7 @@ $$
 
 ---
 
-### 🔸 3.1.6 Kurtosis
+### 3.1.6 Kurtosis
 
 $$
 \text{Kurtosis} = \frac{1 - 6p(1 - p)}{p(1 - p)}
@@ -1081,7 +1081,7 @@ This measures **"tailedness"** or how heavy the tails are compared to a normal d
 
 ---
 
-### 🧠 Trick Question Patterns
+### Trick Question Patterns
 
 1. **If $ \mathbb{E}[X] = 0.3 $, what is $ \text{Var}(X) $?**
 
@@ -1111,13 +1111,13 @@ $$
 
 ---
 
-### 🔹 **3.2 Binomial Distribution**
+### **3.2 Binomial Distribution**
 
 The **Binomial Distribution** models the number of successes in **$ n $** independent **Bernoulli trials**, each with probability of success $ p $.
 
 ---
 
-#### 🔸 3.2.1 PMF (Probability Mass Function)
+#### 3.2.1 PMF (Probability Mass Function)
 
 $$
 P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}, \quad x = 0, 1, 2, ..., n
@@ -1127,7 +1127,7 @@ $$
 
 ---
 
-#### 🔸 3.2.2 Expected Value (Mean)
+#### 3.2.2 Expected Value (Mean)
 
 $$
 \mathbb{E}[X] = n \cdot p
@@ -1137,7 +1137,7 @@ This is intuitive: if each trial has expected value $ p $, the total expected nu
 
 ---
 
-#### 🔸 3.2.3 Variance
+#### 3.2.3 Variance
 
 $$
 \text{Var}(X) = n \cdot p \cdot (1 - p)
@@ -1147,7 +1147,7 @@ This shows variance depends on both number of trials and how "uncertain" each tr
 
 ---
 
-#### 🔸 3.2.4 Moment Generating Function (MGF)
+#### 3.2.4 Moment Generating Function (MGF)
 
 For $ X \sim \text{Binomial}(n, p) $, the MGF is:
 
@@ -1155,13 +1155,13 @@ $$
 M_X(t) = \mathbb{E}[e^{tX}] = [(1 - p) + p e^t]^n
 $$
 
-> 💡 Use this to find moments:
+> Use this to find moments:
 - First derivative $ M'_X(t) $ gives **mean**
 - Second derivative $ M''_X(t) $ helps with **variance**
 
 ---
 
-#### 🔸 3.2.5 Skewness
+#### 3.2.5 Skewness
 
 $$
 \text{Skewness} = \frac{1 - 2p}{\sqrt{np(1 - p)}}
@@ -1172,7 +1172,7 @@ $$
 
 ---
 
-#### 🔸 3.2.6 Kurtosis
+#### 3.2.6 Kurtosis
 
 $$
 \text{Kurtosis} = \frac{1 - 6p(1 - p)}{np(1 - p)} + 3
@@ -1183,7 +1183,7 @@ $$
 
 ---
 
-### 🧠 Trick Question Patterns
+### Trick Question Patterns
 
 1. **If $ X \sim \text{Binomial}(5, 0.4) $, find:**
    - $ \mathbb{E}[X] = 5 \cdot 0.4 = 2 $
@@ -1220,13 +1220,13 @@ $$
 
 ---
 
-### 🔹 **3.3 Multinomial Distribution**
+### **3.3 Multinomial Distribution**
 
 The **Multinomial Distribution** generalizes the Binomial Distribution from two categories (success/failure) to **$ k \geq 2 $** categories.
 
 ---
 
-#### 🔸 3.3.1 PMF (Probability Mass Function)
+#### 3.3.1 PMF (Probability Mass Function)
 
 $$
 P(X_1 = x_1, \dots, X_k = x_k) = \frac{n!}{x_1! x_2! \cdots x_k!} p_1^{x_1} p_2^{x_2} \cdots p_k^{x_k}
@@ -1237,7 +1237,7 @@ $$
 
 ---
 
-#### 🔸 3.3.2 Expected Value
+#### 3.3.2 Expected Value
 
 For each $ i \in \{1, 2, \dots, k\} $:
 
@@ -1249,7 +1249,7 @@ Same as binomial intuition: in $ n $ trials, the expected number of times outcom
 
 ---
 
-#### 🔸 3.3.3 Variance
+#### 3.3.3 Variance
 
 $$
 \text{Var}(X_i) = n \cdot p_i \cdot (1 - p_i)
@@ -1259,7 +1259,7 @@ Each outcome behaves like a binomial, but they’re not independent.
 
 ---
 
-#### 🔸 3.3.4 Covariance
+#### 3.3.4 Covariance
 
 For $ i \neq j $:
 
@@ -1271,7 +1271,7 @@ This makes sense: if more trials result in category $ i $, fewer can result in c
 
 ---
 
-#### 🔸 3.3.5 Moment Generating Function (MGF)
+#### 3.3.5 Moment Generating Function (MGF)
 
 The MGF of the multinomial vector $ \mathbf{X} = (X_1, ..., X_k) $ is:
 
@@ -1283,7 +1283,7 @@ This is a **multi-variable MGF**, so moments are found using partial derivatives
 
 ---
 
-#### 🔸 3.3.6 Skewness & Kurtosis
+#### 3.3.6 Skewness & Kurtosis
 
 - Typically **not defined** or **not commonly used** for the entire multinomial vector.
 - But **each marginal** $ X_i \sim \text{Binomial}(n, p_i) $, so:
@@ -1292,11 +1292,11 @@ This is a **multi-variable MGF**, so moments are found using partial derivatives
 
 ---
 
-### 🧠 Trick Question Patterns
+### Trick Question Patterns
 
 ---
 
-#### 💡 Q1: Example Setup:
+#### Q1: Example Setup:
 
 > A die is rolled 10 times. Let $ X_1 $ = number of 1’s, $ X_2 $ = number of 2’s, ..., $ X_6 $ = number of 6’s.
 
@@ -1307,22 +1307,22 @@ This is a **multi-variable MGF**, so moments are found using partial derivatives
 
 ---
 
-#### 💡 Q2: Constraint-based question:
+#### Q2: Constraint-based question:
 
 > If $ X_1 + X_2 + X_3 = 10 $, find:
 - $ \mathbb{E}[X_1 - X_2] = \mathbb{E}[X_1] - \mathbb{E}[X_2] = n(p_1 - p_2) $
 
 ---
 
-#### 💡 Q3: MGF application:
+#### Q3: MGF application:
 
 > Use $ \left(\sum p_i e^{t_i}\right)^n $ to extract mixed moments like $ \mathbb{E}[X_1 X_2] $ by partial derivatives.
 
 ---
 
-### 🔹 **3.4 Hypergeometric Distribution**
+### **3.4 Hypergeometric Distribution**
 
-#### 🔸 PMF (Probability Mass Function)
+#### PMF (Probability Mass Function)
 
 If $ X $ is the number of successes in $ n $ draws, then:
 
@@ -1337,7 +1337,7 @@ Where:
 
 ---
 
-#### 🔸 3.4.2 Expected Value
+#### 3.4.2 Expected Value
 
 $$
 \mathbb{E}[X] = n \cdot \frac{K}{N}
@@ -1347,7 +1347,7 @@ $$
 
 ---
 
-#### 🔸 3.4.3 Variance
+#### 3.4.3 Variance
 
 $$
 \text{Var}(X) = n \cdot \frac{K}{N} \cdot \frac{N - K}{N} \cdot \frac{N - n}{N - 1}
@@ -1357,14 +1357,14 @@ $$
 
 ---
 
-#### 🔸 3.4.4 MGF (Moment Generating Function)
+#### 3.4.4 MGF (Moment Generating Function)
 
 There’s **no simple closed-form MGF** for Hypergeometric.  
 Instead, moments are usually derived using direct expectation techniques.
 
 ---
 
-#### 🔸 3.4.5 Skewness
+#### 3.4.5 Skewness
 
 $$
 \text{Skewness} = \frac{(N - 2K)\sqrt{N - 1}(N - 2n)}{\sqrt{nK(N - K)(N - n)}(N - 2)}
@@ -1374,17 +1374,17 @@ $$
 
 ---
 
-#### 🔸 3.4.6 Kurtosis
+#### 3.4.6 Kurtosis
 
 No simple form, but it exists. Generally omitted unless explicitly asked.
 
 ---
 
-### 🧠 Trick Question Patterns
+### Trick Question Patterns
 
 ---
 
-#### 💡 Q1: Biased Drawing
+#### Q1: Biased Drawing
 
 > A batch of 20 bulbs contains 6 defective ones. If 5 bulbs are randomly selected without replacement, what's the probability that exactly 2 are defective?
 
@@ -1396,7 +1396,7 @@ $$
 
 ---
 
-#### 💡 Q2: Comparing with Binomial
+#### Q2: Comparing with Binomial
 
 > If the same question allowed **replacement**, then use:
 $$
@@ -1407,7 +1407,7 @@ But in **Hypergeometric**, we account for decreasing probabilities as items are 
 
 ---
 
-#### 💡 Q3: Conceptual Twist
+#### Q3: Conceptual Twist
 
 > You draw 3 cards from a deck of 52. What’s the probability that **all are red**?
 
@@ -1419,7 +1419,7 @@ $$
 
 ---
 
-#### 💡 Q4: Expectation-based
+#### Q4: Expectation-based
 
 > If a jar has 15 white and 10 black balls, and you randomly draw 6 without replacement, what’s the expected number of white balls?
 
@@ -1431,9 +1431,9 @@ $$
 
 ---
 
-### 🔹 **3.5 Negative Binomial Distribution**
+### **3.5 Negative Binomial Distribution**
 
-#### 🔸 PMF (Probability Mass Function)
+#### PMF (Probability Mass Function)
 
 Let $ X $ be the number of **trials** needed to get $ r $ successes.
 
@@ -1452,7 +1452,7 @@ Where:
 
 ---
 
-### 🧠 Alternate Interpretation
+### Alternate Interpretation
 
 Sometimes it's framed as:  
 Let $ Y $ be the number of **failures** before the $ r $-th success.
@@ -1467,7 +1467,7 @@ Where $ Y = X - r $
 
 ---
 
-#### 🔸 3.5.2 Expected Value
+#### 3.5.2 Expected Value
 
 $$
 \mathbb{E}[X] = \frac{r}{p}
@@ -1475,7 +1475,7 @@ $$
 
 ---
 
-#### 🔸 3.5.3 Variance
+#### 3.5.3 Variance
 
 $$
 \text{Var}(X) = \frac{r(1 - p)}{p^2}
@@ -1483,7 +1483,7 @@ $$
 
 ---
 
-#### 🔸 3.5.4 MGF (Moment Generating Function)
+#### 3.5.4 MGF (Moment Generating Function)
 
 $$
 M_X(t) = \left( \frac{p e^t}{1 - (1 - p)e^t} \right)^r, \quad \text{for } t < -\ln(1 - p)
@@ -1491,7 +1491,7 @@ $$
 
 ---
 
-#### 🔸 3.5.5 Skewness
+#### 3.5.5 Skewness
 
 $$
 \text{Skewness} = \frac{2 - p}{\sqrt{r(1 - p)}}
@@ -1499,7 +1499,7 @@ $$
 
 ---
 
-#### 🔸 3.5.6 Kurtosis
+#### 3.5.6 Kurtosis
 
 $$
 \text{Kurtosis} = \frac{6}{r} + \frac{(1 - p)^2}{r p^2}
@@ -1507,11 +1507,11 @@ $$
 
 ---
 
-### 🧠 Trick Question Patterns
+### Trick Question Patterns
 
 ---
 
-#### 💡 Q1: Trials until Successes
+#### Q1: Trials until Successes
 
 > A basketball player hits a shot with probability $ p = 0.4 $. What is the probability that her **5th success** comes on her **10th shot**?
 
@@ -1523,7 +1523,7 @@ $$
 
 ---
 
-#### 💡 Q2: Expectation-based
+#### Q2: Expectation-based
 
 > If $ X \sim \text{NegBin}(r = 3, p = 0.2) $, find $ \mathbb{E}[X] $ and $ \text{Var}(X) $.
 
@@ -1532,7 +1532,7 @@ $$
 
 ---
 
-#### 💡 Q3: Conceptual
+#### Q3: Conceptual
 
 > What’s the difference between Negative Binomial and Binomial?
 
@@ -1544,7 +1544,7 @@ $$
 
 ---
 
-#### 💡 Q4: Reduce to Geometric
+#### Q4: Reduce to Geometric
 
 If $ r = 1 $, the Negative Binomial **reduces to the Geometric Distribution**:
 
@@ -1552,13 +1552,13 @@ $$
 P(X = x) = (1 - p)^{x - 1} p
 $$
 
-We’ll explore this next 👇
+We’ll explore this next 
 
 ---
 
-### 🔹 **3.6 Geometric Distribution**
+### **3.6 Geometric Distribution**
 
-#### 🔸 PMF (Probability Mass Function)
+#### PMF (Probability Mass Function)
 
 Let $ X $ be the trial on which the **first success** occurs.
 
@@ -1573,7 +1573,7 @@ Where:
 
 ---
 
-#### 🔸 3.6.2 MGF (Moment Generating Function)
+#### 3.6.2 MGF (Moment Generating Function)
 
 $$
 M_X(t) = \frac{p e^t}{1 - (1 - p) e^t}, \quad \text{for } t < -\ln(1 - p)
@@ -1581,7 +1581,7 @@ $$
 
 ---
 
-#### 🔸 3.6.3 Expected Value
+#### 3.6.3 Expected Value
 
 $$
 \mathbb{E}[X] = \frac{1}{p}
@@ -1591,7 +1591,7 @@ This means **on average**, you need $ \frac{1}{p} $ trials to get the first succ
 
 ---
 
-#### 🔸 3.6.4 Variance
+#### 3.6.4 Variance
 
 $$
 \text{Var}(X) = \frac{1 - p}{p^2}
@@ -1599,7 +1599,7 @@ $$
 
 ---
 
-#### 🔸 3.6.5 Skewness
+#### 3.6.5 Skewness
 
 $$
 \text{Skewness} = \frac{2 - p}{\sqrt{1 - p}}
@@ -1607,7 +1607,7 @@ $$
 
 ---
 
-#### 🔸 3.6.6 Kurtosis
+#### 3.6.6 Kurtosis
 
 $$
 \text{Kurtosis} = 6 + \frac{p^2}{1 - p}
@@ -1615,7 +1615,7 @@ $$
 
 ---
 
-## 🔄 Relationship to Negative Binomial
+## Relationship to Negative Binomial
 
 The **Geometric Distribution** is a **special case of the Negative Binomial**, when $ r = 1 $.
 
@@ -1624,7 +1624,7 @@ The **Geometric Distribution** is a **special case of the Negative Binomial**, w
 
 ---
 
-## 💡 Trick Question Patterns
+## Trick Question Patterns
 
 ---
 
@@ -1671,9 +1671,9 @@ If $ X \sim \text{Geometric}(0.25) $:
 
 ---
 
-### 🔹 **3.7 Poisson Distribution**
+### **3.7 Poisson Distribution**
 
-#### 🔸 PMF (Probability Mass Function)
+#### PMF (Probability Mass Function)
 
 Let $ X \sim \text{Poisson}(\lambda) $, where $ \lambda $ is the **average rate** of occurrences in an interval.
 
@@ -1687,7 +1687,7 @@ Where:
 
 ---
 
-#### 🔸 3.7.2 MGF (Moment Generating Function)
+#### 3.7.2 MGF (Moment Generating Function)
 
 $$
 M_X(t) = \exp\left( \lambda (e^t - 1) \right)
@@ -1695,7 +1695,7 @@ $$
 
 ---
 
-#### 🔸 3.7.3 Expected Value
+#### 3.7.3 Expected Value
 
 $$
 \mathbb{E}[X] = \lambda
@@ -1703,7 +1703,7 @@ $$
 
 ---
 
-#### 🔸 3.7.4 Variance
+#### 3.7.4 Variance
 
 $$
 \text{Var}(X) = \lambda
@@ -1713,7 +1713,7 @@ $$
 
 ---
 
-#### 🔸 3.7.5 Skewness
+#### 3.7.5 Skewness
 
 $$
 \text{Skewness} = \frac{1}{\sqrt{\lambda}}
@@ -1721,7 +1721,7 @@ $$
 
 ---
 
-#### 🔸 3.7.6 Kurtosis
+#### 3.7.6 Kurtosis
 
 $$
 \text{Kurtosis} = \frac{1}{\lambda}
@@ -1729,7 +1729,7 @@ $$
 
 ---
 
-## 🔁 Relationship with Binomial Distribution
+## Relationship with Binomial Distribution
 
 The Poisson is often seen as a **limiting case of the Binomial distribution** when:
 
@@ -1739,7 +1739,7 @@ $$
 
 ---
 
-## 🧠 Trick Question Patterns
+## Trick Question Patterns
 
 ---
 
@@ -1784,7 +1784,7 @@ $$
 
 > If the variance of a discrete distribution is equal to its mean, what could be the distribution?
 
-✅ **Poisson**!
+**Poisson**!
 
 ---
 
@@ -1800,4 +1800,4 @@ Only valid if $ X_1 $ and $ X_2 $ are **independent**.
 
 ---
 
-That completes Part 3 and your entire **Sessional II Syllabus** 🎯
+That completes Part 3 and your entire **Sessional II Syllabus** 
