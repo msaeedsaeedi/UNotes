@@ -2138,3 +2138,259 @@ $$
 M_X(t) = (1 - p) + p e^t \Rightarrow M'_X(t) = p e^t
 \Rightarrow M'_X(0) = p
 $$
+
+## 📌 **3.2 Binomial Distribution**
+
+The **Binomial Distribution** models the number of successes in **$ n $** independent **Bernoulli trials**, each with probability of success $ p $.
+
+---
+
+### 🔹 Random Variable Definition
+
+Let $ X \sim \text{Binomial}(n, p) $, where:
+
+- $ X $ = number of successes in $ n $ trials
+- Each trial is independent
+- Probability of success in each trial = $ p $
+- Probability of failure = $ 1 - p $
+
+---
+
+### 🔸 3.2.1 Probability Mass Function (PMF)
+
+$$
+P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}, \quad x = 0, 1, 2, ..., n
+$$
+
+- $ \binom{n}{x} $ is the number of ways to choose $ x $ successes from $ n $ trials.
+
+---
+
+### 🔸 3.2.2 Expected Value (Mean)
+
+$$
+\mathbb{E}[X] = n \cdot p
+$$
+
+This is intuitive: if each trial has expected value $ p $, the total expected number of successes in $ n $ trials is $ n \cdot p $.
+
+---
+
+The mean (or expected value) of a binomial distribution can be derived using the definition of expected value.
+
+### 1. **Binomial Distribution Setup:**
+A random variable $ X $ follows a binomial distribution if the number of successes in $ n $ independent trials is counted, where the probability of success in each trial is $ p $ and the probability of failure is $ 1 - p $.
+
+The probability mass function (PMF) for a binomial distribution is given by:
+$$
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+$$
+where:
+- $ n $ is the number of trials,
+- $ p $ is the probability of success,
+- $ k $ is the number of successes (where $ k = 0, 1, 2, \dots, n $).
+
+### 2. **Expected Value Definition:**
+The expected value (mean) $ \mu $ of a discrete random variable $ X $ is defined as:
+$$
+\mu = E(X) = \sum_{k=0}^{n} k \cdot P(X = k)
+$$
+Substituting the PMF of the binomial distribution:
+$$
+\mu = \sum_{k=0}^{n} k \cdot \binom{n}{k} p^k (1-p)^{n-k}
+$$
+
+### 3. **Simplification Using Binomial Theorem:**
+
+This sum can be simplified by using the properties of binomial coefficients and derivatives. The key observation is that we can express the binomial distribution as a sum of $ n $ independent Bernoulli trials, each with a success probability of $ p $.
+
+Let $ X_1, X_2, \dots, X_n $ be independent Bernoulli random variables, each with the distribution $ P(X_i = 1) = p $ and $ P(X_i = 0) = 1 - p $. The binomial random variable $ X $ is the sum of these Bernoulli random variables:
+$$
+X = X_1 + X_2 + \dots + X_n
+$$
+
+Since the expected value of each Bernoulli random variable $ X_i $ is $ E(X_i) = p $, the expected value of the sum is:
+$$
+E(X) = E(X_1 + X_2 + \dots + X_n) = E(X_1) + E(X_2) + \dots + E(X_n)
+$$
+
+Using the fact that the expected value of each $ X_i $ is $ p $:
+$$
+E(X) = p + p + \dots + p = n \cdot p
+$$
+
+### 4. **Conclusion:**
+Therefore, the mean (expected value) of a binomial distribution is:
+$$
+\mu = n \cdot p
+$$
+
+This is the formula for the mean of a binomial distribution, where $ n $ is the number of trials, and $ p $ is the probability of success in each trial.
+
+---
+
+### 🔸 3.2.3 Variance
+
+$$
+\text{Var}(X) = n \cdot p \cdot (1 - p)
+$$
+
+This shows variance depends on both number of trials and how "uncertain" each trial is.
+
+---
+   To derive the variance of a binomial distribution, we will use the properties of variance and the fact that a binomial random variable $ X $ can be expressed as the sum of independent Bernoulli random variables.
+
+   ### 1. **Variance Definition:**
+   The variance of a random variable $ X $ is defined as:
+   $$
+   \text{Var}(X) = E(X^2) - [E(X)]^2
+   $$
+   We already know that $ E(X) = n \cdot p $ for a binomial distribution.
+
+   ### 2. **Variance of a Sum of Independent Random Variables:**
+   Since a binomial random variable $ X $ is the sum of $ n $ independent Bernoulli random variables $ X_1, X_2, \dots, X_n $, we can use the property of variance for independent random variables:
+   $$
+   \text{Var}(X) = \text{Var}(X_1 + X_2 + \dots + X_n) = \text{Var}(X_1) + \text{Var}(X_2) + \dots + \text{Var}(X_n)
+   $$
+   This is because the variance of the sum of independent random variables is the sum of their variances.
+
+   ### 3. **Variance of a Bernoulli Random Variable:**
+   For each Bernoulli random variable $ X_i $, we know the variance is given by:
+   $$
+   \text{Var}(X_i) = p(1 - p)
+   $$
+   This comes from the formula for the variance of a Bernoulli distribution, where the expected value $ E(X_i) = p $.
+
+   ### 4. **Variance of the Binomial Distribution:**
+   Since all the Bernoulli random variables $ X_1, X_2, \dots, X_n $ have the same variance $ p(1 - p) $, we can sum the variances:
+   $$
+   \text{Var}(X) = n \cdot \text{Var}(X_i) = n \cdot p(1 - p)
+   $$
+
+   ### 5. **Conclusion:**
+   Therefore, the variance of a binomial distribution is:
+   $$
+   \text{Var}(X) = n \cdot p \cdot (1 - p)
+   $$
+   where:
+   - $ n $ is the number of trials,
+   - $ p $ is the probability of success in each trial.
+
+
+---
+
+### 🔸 3.2.4 Moment Generating Function (MGF)
+
+For $ X \sim \text{Binomial}(n, p) $, the MGF is:
+
+$$
+M_X(t) = \mathbb{E}[e^{tX}] = [(1 - p) + p e^t]^n
+$$
+
+> 💡 Use this to find moments:
+- First derivative $ M'_X(t) $ gives **mean**
+- Second derivative $ M''_X(t) $ helps with **variance**
+---
+
+To find the **Moment-Generating Function (MGF)** of a binomial distribution, we use the definition of the MGF and apply it to the binomial distribution.
+
+### 1. **Moment-Generating Function (MGF) Definition:**
+The moment-generating function $ M_X(t) $ of a random variable $ X $ is defined as the expected value of $ e^{tX} $:
+$$
+M_X(t) = E(e^{tX})
+$$
+For a binomial distribution with parameters $ n $ (the number of trials) and $ p $ (the probability of success in each trial), we want to compute the MGF of the binomial random variable $ X $.
+
+### 2. **Binomial Distribution Setup:**
+We already know that the binomial random variable $ X $ is the sum of $ n $ independent Bernoulli random variables:
+$$
+X = X_1 + X_2 + \dots + X_n
+$$
+where each $ X_i $ is a Bernoulli random variable with $ P(X_i = 1) = p $ and $ P(X_i = 0) = 1 - p $.
+
+### 3. **MGF of a Bernoulli Random Variable:**
+The MGF of a Bernoulli random variable $ X_i $ with success probability $ p $ is:
+$$
+M_{X_i}(t) = E(e^{tX_i}) = p \cdot e^t + (1 - p) \cdot e^0 = p \cdot e^t + (1 - p)
+$$
+So, the MGF of a Bernoulli random variable is:
+$$
+M_{X_i}(t) = p e^t + (1 - p)
+$$
+
+### 4. **MGF of the Binomial Distribution:**
+Since $ X = X_1 + X_2 + \dots + X_n $ is the sum of independent Bernoulli random variables, the MGF of $ X $ is the product of the MGFs of the individual Bernoulli random variables:
+$$
+M_X(t) = \prod_{i=1}^{n} M_{X_i}(t)
+$$
+Since each Bernoulli random variable has the same MGF, $ M_{X_i}(t) = p e^t + (1 - p) $, we get:
+$$
+M_X(t) = \left( p e^t + (1 - p) \right)^n
+$$
+
+### 5. **Final Result:**
+The moment-generating function of a binomial distribution with parameters $ n $ and $ p $ is:
+$$
+M_X(t) = \left( p e^t + (1 - p) \right)^n
+$$
+
+This MGF can be used to compute the moments (such as the mean and variance) by differentiating it and evaluating at $ t = 0 $.
+
+---
+
+### 🔸 3.2.5 Skewness
+
+$$
+\text{Skewness} = \frac{1 - 2p}{\sqrt{np(1 - p)}}
+$$
+
+- Skewness tells us whether the distribution is symmetric or not.
+- Symmetric when $ p = 0.5 $
+
+---
+
+### 🔸 3.2.6 Kurtosis
+
+$$
+\text{Kurtosis} = \frac{1 - 6p(1 - p)}{np(1 - p)} + 3
+$$
+
+- Kurtosis > 3 means heavy tails (leptokurtic)
+- Kurtosis < 3 means light tails (platykurtic)
+
+---
+
+### 🧠 Trick Question Patterns
+
+1. **If $ X \sim \text{Binomial}(5, 0.4) $, find:**
+   - $ \mathbb{E}[X] = 5 \cdot 0.4 = 2 $
+   - $ \text{Var}(X) = 5 \cdot 0.4 \cdot 0.6 = 1.2 $
+
+---
+
+2. **MGF Application:**
+   - $ M_X(t) = [(1 - p) + p e^t]^n $
+   - Find $ \mathbb{E}[X] $ using:  
+     $$
+     M'_X(t) = n \cdot [(1 - p) + p e^t]^{n-1} \cdot p e^t \Rightarrow M'_X(0) = np
+     $$
+
+---
+
+3. **Skewness-based reasoning:**
+   - For large $ n $, skewness gets closer to 0 → distribution becomes symmetric.
+
+---
+
+4. **Maximum Probability Value:**
+   - The mode (most probable value) of a Binomial Distribution is usually:
+     $$
+     \lfloor (n + 1)p \rfloor
+     $$
+
+---
+
+5. **Cumulative Probabilities:**
+   - $ P(X \leq x) $ often requires either:
+     - Direct calculation using the PMF
+     - Binomial tables / software
