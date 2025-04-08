@@ -2025,3 +2025,116 @@ P(|X - 10| \geq 6) \leq \frac{1}{(1.5)^2} = \frac{1}{2.25} = 0.444
 $$
 
 Thus, the probability that $ X $ deviates by **more than 6 units** from the mean is **at most 44.4%**.
+
+## 📌 **3.1 Bernoulli Distribution**
+
+The **Bernoulli distribution** is the **simplest discrete probability distribution**, modeling a single experiment with only two outcomes: **success (1)** and **failure (0)**.
+
+---
+
+### 🔹 Random Variable Definition
+
+Let $ X \sim \text{Bernoulli}(p) $, where:
+
+- $ X = 1 $ with probability $ p $ (success)
+- $ X = 0 $ with probability $ 1 - p $ (failure)
+
+---
+
+### 🔸 3.1.1 Probability Mass Function (PMF)
+
+$$
+P(X = x) = p^x (1 - p)^{1 - x}, \quad \text{for } x \in \{0, 1\}
+$$
+
+This compact formula works for both cases:
+- If $ x = 1 $: $ P(1) = p $
+- If $ x = 0 $: $ P(0) = 1 - p $
+
+---
+
+### 🔸 3.1.2 Mean (Expected Value)
+
+$$
+\mathbb{E}[X] = 0 \cdot (1 - p) + 1 \cdot p = p
+$$
+
+So, the **mean of a Bernoulli random variable is $ p $**.
+
+---
+
+### 🔸 3.1.3 Variance
+
+$$
+\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
+$$
+
+But for Bernoulli, since $ X^2 = X $ (because $ X \in \{0,1\} $):
+
+$$
+\text{Var}(X) = \mathbb{E}[X] - (\mathbb{E}[X])^2 = p - p^2 = p(1 - p)
+$$
+
+So, the **variance is $ p(1 - p) $**.
+
+---
+
+### 🔸 3.1.4 Moment Generating Function (MGF)
+
+The MGF of a discrete random variable is:
+
+$$
+M_X(t) = \mathbb{E}[e^{tX}] = e^{0t}(1 - p) + e^{1t}(p) = (1 - p) + p e^t
+$$
+
+---
+
+### 🔸 3.1.5 Skewness
+
+$$
+\text{Skewness} = \frac{1 - 2p}{\sqrt{p(1 - p)}}
+$$
+
+- If $ p = 0.5 $: symmetric (skewness = 0)
+- If $ p < 0.5 $: right-skewed
+- If $ p > 0.5 $: left-skewed
+
+---
+
+### 🔸 3.1.6 Kurtosis
+
+$$
+\text{Kurtosis} = \frac{1 - 6p(1 - p)}{p(1 - p)}
+$$
+
+This measures **"tailedness"** or how heavy the tails are compared to a normal distribution.
+
+---
+
+### 🧠 Trick Question Patterns
+
+1. **If $ \mathbb{E}[X] = 0.3 $, what is $ \text{Var}(X) $?**
+
+$$
+\text{Var}(X) = p(1 - p) = 0.3 \cdot 0.7 = 0.21
+$$
+
+---
+
+2. **Find skewness when $ \text{Var}(X) = 0.25 $**
+
+If $ p(1 - p) = 0.25 $, then:
+
+$$
+p = 0.5 \Rightarrow \text{Skewness} = \frac{1 - 2(0.5)}{\sqrt{0.25}} = \frac{0}{0.5} = 0
+$$
+
+---
+
+3. **MGF-based question:**
+
+> Find $ \mathbb{E}[X] $ using MGF:
+$$
+M_X(t) = (1 - p) + p e^t \Rightarrow M'_X(t) = p e^t
+\Rightarrow M'_X(0) = p
+$$
