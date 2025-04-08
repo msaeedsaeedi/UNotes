@@ -2631,3 +2631,134 @@ $$
 $$
 \mathbb{E}[X] = 6 \cdot \frac{15}{25} = 3.6
 $$
+
+## 📌 3.5 Negative Binomial Distribution
+
+### 🔹 Intuition
+
+The **Negative Binomial Distribution** models the number of **trials** needed to achieve a **fixed number of successes** $ r $, with each trial having a success probability $ p $, **and the trials are independent**.
+
+> Think: How many times do I need to roll a die until I get 3 sixes?
+
+---
+
+### 🔸 3.5.1 PMF (Probability Mass Function)
+
+Let $ X $ be the number of **trials** needed to get $ r $ successes.
+
+$$
+P(X = x) = \binom{x - 1}{r - 1} p^r (1 - p)^{x - r}, \quad x = r, r+1, r+2, \dots
+$$
+
+Where:
+
+- $ r $: fixed number of **successes**
+- $ x $: total number of **trials**
+- $ p $: probability of success
+- $ X \sim \text{NegativeBinomial}(r, p) $
+
+> We succeed on the **x-th** trial, and before that, we had $ r-1 $ successes in $ x-1 $ trials.
+
+---
+
+### 🧠 Alternate Interpretation
+
+Sometimes it's framed as:  
+Let $ Y $ be the number of **failures** before the $ r $-th success.
+
+Then,
+
+$$
+P(Y = y) = \binom{r + y - 1}{y} p^r (1 - p)^y
+$$
+
+Where $ Y = X - r $
+
+---
+
+### 🔸 3.5.2 Expected Value
+
+$$
+\mathbb{E}[X] = \frac{r}{p}
+$$
+
+---
+
+### 🔸 3.5.3 Variance
+
+$$
+\text{Var}(X) = \frac{r(1 - p)}{p^2}
+$$
+
+---
+
+### 🔸 3.5.4 MGF (Moment Generating Function)
+
+$$
+M_X(t) = \left( \frac{p e^t}{1 - (1 - p)e^t} \right)^r, \quad \text{for } t < -\ln(1 - p)
+$$
+
+---
+
+### 🔸 3.5.5 Skewness
+
+$$
+\text{Skewness} = \frac{2 - p}{\sqrt{r(1 - p)}}
+$$
+
+---
+
+### 🔸 3.5.6 Kurtosis
+
+$$
+\text{Kurtosis} = \frac{6}{r} + \frac{(1 - p)^2}{r p^2}
+$$
+
+---
+
+## 🧠 Trick Question Patterns
+
+---
+
+### 💡 Q1: Trials until Successes
+
+> A basketball player hits a shot with probability $ p = 0.4 $. What is the probability that her **5th success** comes on her **10th shot**?
+
+- $ r = 5, x = 10 $
+
+$$
+P(X = 10) = \binom{9}{4} \cdot (0.4)^5 \cdot (0.6)^5
+$$
+
+---
+
+### 💡 Q2: Expectation-based
+
+> If $ X \sim \text{NegBin}(r = 3, p = 0.2) $, find $ \mathbb{E}[X] $ and $ \text{Var}(X) $.
+
+- $ \mathbb{E}[X] = \frac{3}{0.2} = 15 $
+- $ \text{Var}(X) = \frac{3(1 - 0.2)}{0.2^2} = \frac{3 \cdot 0.8}{0.04} = 60 $
+
+---
+
+### 💡 Q3: Conceptual
+
+> What’s the difference between Negative Binomial and Binomial?
+
+| Feature | Binomial | Negative Binomial |
+|--------|----------|-------------------|
+| Fixed | Number of trials $ n $ | Number of successes $ r $ |
+| Variable | Number of successes | Number of trials |
+| Application | Pass/fail in fixed tries | Time until fixed # of wins |
+
+---
+
+### 💡 Q4: Reduce to Geometric
+
+If $ r = 1 $, the Negative Binomial **reduces to the Geometric Distribution**:
+
+$$
+P(X = x) = (1 - p)^{x - 1} p
+$$
+
+We’ll explore this next 👇
